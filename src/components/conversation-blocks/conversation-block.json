@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_conversation_blocks_conversation_blocks",
+  "info": {
+    "displayName": "Conversation Block",
+    "icon": "microphone",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "speaker": {
+      "type": "string"
+    },
+    "content": {
+      "type": "blocks"
+    }
+  }
+}

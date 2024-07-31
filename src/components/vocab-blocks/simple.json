@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_vocab_blocks_simples",
+  "info": {
+    "displayName": "Simple",
+    "icon": "write"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "blocks"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_lesson_page_blocks_verbs",
+  "info": {
+    "displayName": "Verb",
+    "icon": "walk"
+  },
+  "options": {},
+  "attributes": {
+    "infinitive": {
+      "type": "string"
+    },
+    "firstSing": {
+      "type": "string"
+    },
+    "secondSing": {
+      "type": "string"
+    },
+    "thirdSing": {
+      "type": "string"
+    },
+    "firstPlu": {
+      "type": "string"
+    },
+    "secondPlu": {
+      "type": "string"
+    },
+    "thirdPlu": {
+      "type": "string"
+    }
+  }
+}

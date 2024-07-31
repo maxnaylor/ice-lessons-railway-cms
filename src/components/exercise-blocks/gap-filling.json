@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_exercise_blocks_gap_fillings",
+  "info": {
+    "displayName": "Gap Filling",
+    "icon": "book",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "instructions": {
+      "type": "blocks"
+    },
+    "rows": {
+      "displayName": "Gap Filling Row",
+      "type": "component",
+      "repeatable": true,
+      "component": "exercise-blocks.gap-filling-row"
+    }
+  }
+}

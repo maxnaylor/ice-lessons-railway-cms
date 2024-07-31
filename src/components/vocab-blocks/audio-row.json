@@ -1,0 +1,57 @@
+{
+  "collectionName": "components_vocab_blocks_audio_rows",
+  "info": {
+    "displayName": "Audio Row",
+    "icon": "microphone",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "blocks"
+    },
+    "audio": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "audios"
+      ]
+    },
+    "column": {
+      "type": "integer",
+      "min": 1,
+      "max": 4,
+      "default": 1
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "gap": {
+      "type": "boolean",
+      "default": false
+    },
+    "isColumn": {
+      "type": "boolean",
+      "default": false
+    },
+    "isCentred": {
+      "type": "boolean",
+      "default": false
+    },
+    "imageSize": {
+      "type": "enumeration",
+      "enum": [
+        "large",
+        "medium",
+        "small"
+      ],
+      "default": "medium"
+    }
+  }
+}

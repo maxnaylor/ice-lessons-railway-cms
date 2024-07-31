@@ -1,0 +1,54 @@
+{
+  "collectionName": "components_lesson_page_blocks_vocab_blocks",
+  "info": {
+    "displayName": "Tile Block",
+    "icon": "layer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "imageSize": {
+      "type": "enumeration",
+      "enum": [
+        "large",
+        "medium",
+        "small"
+      ],
+      "default": "large"
+    },
+    "row": {
+      "type": "component",
+      "repeatable": true,
+      "component": "vocab-blocks.audio-row"
+    },
+    "hero": {
+      "type": "boolean",
+      "default": false
+    },
+    "columns": {
+      "type": "integer",
+      "default": 1,
+      "max": 4,
+      "min": 1
+    },
+    "vAlign": {
+      "type": "enumeration",
+      "enum": [
+        "top",
+        "center",
+        "bottom"
+      ]
+    }
+  }
+}

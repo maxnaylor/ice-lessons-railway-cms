@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_course_cards_course_feature_rows",
+  "info": {
+    "displayName": "Course Feature Rows",
+    "icon": "check"
+  },
+  "options": {},
+  "attributes": {
+    "feature": {
+      "type": "text"
+    }
+  }
+}

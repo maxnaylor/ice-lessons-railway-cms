@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lesson_pages",
+  "info": {
+    "singularName": "lesson-page",
+    "pluralName": "lesson-pages",
+    "displayName": "Lesson Pages",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "lesson": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::lesson.lesson"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "vocab",
+        "conversation",
+        "pronunciation",
+        "verb",
+        "exercise",
+        "summary"
+      ],
+      "required": true,
+      "default": "vocab"
+    },
+    "content": {
+      "type": "dynamiczone",
+      "components": [
+        "lesson-page-blocks.paragraph",
+        "lesson-page-blocks.vocab-block",
+        "lesson-page-blocks.conversation",
+        "lesson-page-blocks.callout",
+        "lesson-page-blocks.verb"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "required": true,
+      "targetField": "title"
+    },
+    "longTitle": {
+      "type": "string"
+    },
+    "exercise": {
+      "type": "dynamiczone",
+      "components": [
+        "exercise-blocks.gap-filling"
+      ]
+    }
+  }
+}

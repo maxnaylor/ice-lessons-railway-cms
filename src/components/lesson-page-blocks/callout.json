@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_lesson_page_blocks_callouts",
+  "info": {
+    "displayName": "Callout",
+    "icon": "message"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "tip",
+        "task"
+      ],
+      "required": false
+    },
+    "content": {
+      "type": "blocks",
+      "required": true
+    }
+  }
+}

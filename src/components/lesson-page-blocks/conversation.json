@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_lesson_page_blocks_conversations",
+  "info": {
+    "displayName": "Conversation",
+    "icon": "quote",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "row": {
+      "displayName": "Conversation Block",
+      "type": "component",
+      "repeatable": true,
+      "component": "conversation-blocks.conversation-block"
+    },
+    "audio": {
+      "allowedTypes": [
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}
