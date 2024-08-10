@@ -362,6 +362,150 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiCourseCourse extends Schema.CollectionType {
+  collectionName: 'courses';
+  info: {
+    singularName: 'course';
+    pluralName: 'courses';
+    displayName: 'Courses';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    productID: Attribute.UID;
+    lessons: Attribute.Relation<
+      'api::course.course',
+      'oneToMany',
+      'api::lesson.lesson'
+    >;
+    slug: Attribute.UID<'api::course.course', 'name'>;
+    intro: Attribute.Blocks;
+    cover: Attribute.Media;
+    cardTagline: Attribute.Text;
+    features: Attribute.Component<'course-cards.course-feature-rows', true>;
+    duration: Attribute.Integer;
+    assessmentType: Attribute.String;
+    price: Attribute.Decimal;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::course.course',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::course.course',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLessonLesson extends Schema.CollectionType {
+  collectionName: 'lessons';
+  info: {
+    singularName: 'lesson';
+    pluralName: 'lessons';
+    displayName: 'Lessons';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    internalTitle: Attribute.String & Attribute.Required;
+    slug: Attribute.UID<'api::lesson.lesson', 'title'> & Attribute.Required;
+    lessonPages: Attribute.Relation<
+      'api::lesson.lesson',
+      'oneToMany',
+      'api::lesson-page.lesson-page'
+    >;
+    course: Attribute.Relation<
+      'api::lesson.lesson',
+      'oneToOne',
+      'api::course.course'
+    >;
+    label: Attribute.String;
+    icon: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::lesson.lesson',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::lesson.lesson',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLessonPageLessonPage extends Schema.CollectionType {
+  collectionName: 'lesson_pages';
+  info: {
+    singularName: 'lesson-page';
+    pluralName: 'lesson-pages';
+    displayName: 'Lesson Pages';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    lesson: Attribute.Relation<
+      'api::lesson-page.lesson-page',
+      'oneToOne',
+      'api::lesson.lesson'
+    >;
+    type: Attribute.Enumeration<
+      ['vocab', 'conversation', 'pronunciation', 'verb', 'exercise', 'summary']
+    > &
+      Attribute.Required &
+      Attribute.DefaultTo<'vocab'>;
+    content: Attribute.DynamicZone<
+      [
+        'lesson-page-blocks.paragraph',
+        'lesson-page-blocks.vocab-block',
+        'lesson-page-blocks.conversation',
+        'lesson-page-blocks.callout',
+        'lesson-page-blocks.verb'
+      ]
+    >;
+    slug: Attribute.UID<'api::lesson-page.lesson-page', 'title'> &
+      Attribute.Required;
+    longTitle: Attribute.String;
+    exercise: Attribute.DynamicZone<['exercise-blocks.gap-filling']>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::lesson-page.lesson-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::lesson-page.lesson-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -695,7 +839,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
   options: {
     draftAndPublish: false;
-    timestamps: true;
   };
   attributes: {
     username: Attribute.String &
@@ -724,6 +867,8 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'manyToOne',
       'plugin::users-permissions.role'
     >;
+    firstName: Attribute.String & Attribute.Required;
+    gender: Attribute.Enumeration<['m', 'f', 'nb']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -788,150 +933,6 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
-export interface ApiCourseCourse extends Schema.CollectionType {
-  collectionName: 'courses';
-  info: {
-    singularName: 'course';
-    pluralName: 'courses';
-    displayName: 'Courses';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    name: Attribute.String & Attribute.Required;
-    productID: Attribute.UID;
-    lessons: Attribute.Relation<
-      'api::course.course',
-      'oneToMany',
-      'api::lesson.lesson'
-    >;
-    slug: Attribute.UID<'api::course.course', 'name'>;
-    intro: Attribute.Blocks;
-    cover: Attribute.Media;
-    cardTagline: Attribute.Text;
-    features: Attribute.Component<'course-cards.course-feature-rows', true>;
-    duration: Attribute.Integer;
-    assessmentType: Attribute.String;
-    price: Attribute.Decimal;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::course.course',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::course.course',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiLessonLesson extends Schema.CollectionType {
-  collectionName: 'lessons';
-  info: {
-    singularName: 'lesson';
-    pluralName: 'lessons';
-    displayName: 'Lessons';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.String & Attribute.Required;
-    internalTitle: Attribute.String & Attribute.Required;
-    slug: Attribute.UID<'api::lesson.lesson', 'title'> & Attribute.Required;
-    lessonPages: Attribute.Relation<
-      'api::lesson.lesson',
-      'oneToMany',
-      'api::lesson-page.lesson-page'
-    >;
-    course: Attribute.Relation<
-      'api::lesson.lesson',
-      'oneToOne',
-      'api::course.course'
-    >;
-    label: Attribute.String;
-    icon: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::lesson.lesson',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::lesson.lesson',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiLessonPageLessonPage extends Schema.CollectionType {
-  collectionName: 'lesson_pages';
-  info: {
-    singularName: 'lesson-page';
-    pluralName: 'lesson-pages';
-    displayName: 'Lesson Pages';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.String & Attribute.Required;
-    lesson: Attribute.Relation<
-      'api::lesson-page.lesson-page',
-      'oneToOne',
-      'api::lesson.lesson'
-    >;
-    type: Attribute.Enumeration<
-      ['vocab', 'conversation', 'pronunciation', 'verb', 'exercise', 'summary']
-    > &
-      Attribute.Required &
-      Attribute.DefaultTo<'vocab'>;
-    content: Attribute.DynamicZone<
-      [
-        'lesson-page-blocks.paragraph',
-        'lesson-page-blocks.vocab-block',
-        'lesson-page-blocks.conversation',
-        'lesson-page-blocks.callout',
-        'lesson-page-blocks.verb'
-      ]
-    >;
-    slug: Attribute.UID<'api::lesson-page.lesson-page', 'title'> &
-      Attribute.Required;
-    longTitle: Attribute.String;
-    exercise: Attribute.DynamicZone<['exercise-blocks.gap-filling']>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::lesson-page.lesson-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::lesson-page.lesson-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -942,6 +943,9 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::course.course': ApiCourseCourse;
+      'api::lesson.lesson': ApiLessonLesson;
+      'api::lesson-page.lesson-page': ApiLessonPageLessonPage;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -950,9 +954,6 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
-      'api::course.course': ApiCourseCourse;
-      'api::lesson.lesson': ApiLessonLesson;
-      'api::lesson-page.lesson-page': ApiLessonPageLessonPage;
     }
   }
 }
