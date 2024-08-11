@@ -76,6 +76,23 @@
         "f",
         "nb"
       ]
+    },
+    "lang": {
+      "type": "enumeration",
+      "enum": [
+        "is",
+        "en-gb"
+      ],
+      "default": "en-gb"
+    },
+    "appearance": {
+      "type": "enumeration",
+      "enum": [
+        "auto",
+        "light",
+        "dark"
+      ],
+      "default": "auto"
     }
   }
 }
