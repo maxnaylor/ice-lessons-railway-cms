@@ -725,6 +725,9 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     >;
     firstName: Attribute.String & Attribute.Required;
     gender: Attribute.Enumeration<['m', 'f', 'nb']>;
+    lang: Attribute.Enumeration<['is', 'en-gb']> & Attribute.DefaultTo<'en-gb'>;
+    appearance: Attribute.Enumeration<['auto', 'light', 'dark']> &
+      Attribute.DefaultTo<'auto'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
