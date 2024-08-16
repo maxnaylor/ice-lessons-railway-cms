@@ -728,6 +728,7 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     lang: Attribute.Enumeration<['is', 'en-gb']> & Attribute.DefaultTo<'en-gb'>;
     appearance: Attribute.Enumeration<['auto', 'light', 'dark']> &
       Attribute.DefaultTo<'auto'>;
+    trialExpiry: Attribute.DateTime;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

@@ -93,6 +93,9 @@
         "dark"
       ],
       "default": "auto"
+    },
+    "trialExpiry": {
+      "type": "datetime"
     }
   }
 }
