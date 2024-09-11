@@ -43,7 +43,6 @@ export interface ExerciseBlocksGapFilling extends Schema.Component {
     description: '';
   };
   attributes: {
-    instructions: Attribute.Blocks;
     rows: Attribute.Component<'exercise-blocks.gap-filling-row', true>;
   };
 }

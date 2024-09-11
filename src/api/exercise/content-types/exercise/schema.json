@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "exercises",
+  "info": {
+    "singularName": "exercise",
+    "pluralName": "exercises",
+    "displayName": "Exercises",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "dynamiczone",
+      "components": [
+        "exercise-blocks.gap-filling"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "private": true
+    },
+    "instructions": {
+      "type": "blocks"
+    }
+  }
+}

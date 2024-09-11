@@ -838,6 +838,39 @@ export interface ApiCourseCourse extends Schema.CollectionType {
   };
 }
 
+export interface ApiExerciseExercise extends Schema.CollectionType {
+  collectionName: 'exercises';
+  info: {
+    singularName: 'exercise';
+    pluralName: 'exercises';
+    displayName: 'Exercises';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Attribute.DynamicZone<['exercise-blocks.gap-filling']>;
+    title: Attribute.String & Attribute.Required & Attribute.Private;
+    instructions: Attribute.Blocks;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::exercise.exercise',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::exercise.exercise',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiLessonLesson extends Schema.CollectionType {
   collectionName: 'lessons';
   info: {
@@ -918,7 +951,11 @@ export interface ApiLessonPageLessonPage extends Schema.CollectionType {
     slug: Attribute.UID<'api::lesson-page.lesson-page', 'title'> &
       Attribute.Required;
     longTitle: Attribute.String;
-    exercise: Attribute.DynamicZone<['exercise-blocks.gap-filling']>;
+    exercise: Attribute.Relation<
+      'api::lesson-page.lesson-page',
+      'oneToOne',
+      'api::exercise.exercise'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -997,6 +1034,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::course.course': ApiCourseCourse;
+      'api::exercise.exercise': ApiExerciseExercise;
       'api::lesson.lesson': ApiLessonLesson;
       'api::lesson-page.lesson-page': ApiLessonPageLessonPage;
       'api::purchase.purchase': ApiPurchasePurchase;

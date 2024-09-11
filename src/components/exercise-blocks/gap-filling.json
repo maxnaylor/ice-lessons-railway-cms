@@ -7,9 +7,6 @@
   },
   "options": {},
   "attributes": {
-    "instructions": {
-      "type": "blocks"
-    },
     "rows": {
       "displayName": "Gap Filling Row",
       "type": "component",

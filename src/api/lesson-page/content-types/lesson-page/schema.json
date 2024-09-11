@@ -53,10 +53,9 @@
       "type": "string"
     },
     "exercise": {
-      "type": "dynamiczone",
-      "components": [
-        "exercise-blocks.gap-filling"
-      ]
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::exercise.exercise"
     }
   }
 }
