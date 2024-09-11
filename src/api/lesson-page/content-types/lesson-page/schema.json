@@ -41,8 +41,7 @@
         "lesson-page-blocks.vocab-block",
         "lesson-page-blocks.conversation",
         "lesson-page-blocks.callout",
-        "lesson-page-blocks.verb",
-        "lesson-page-blocks.exercise"
+        "lesson-page-blocks.verb"
       ]
     },
     "slug": {
@@ -52,6 +51,11 @@
     },
     "longTitle": {
       "type": "string"
+    },
+    "exercise": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::exercise.exercise"
     }
   }
 }

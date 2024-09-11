@@ -72,21 +72,6 @@ export interface LessonPageBlocksConversation extends Schema.Component {
   };
 }
 
-export interface LessonPageBlocksExercise extends Schema.Component {
-  collectionName: 'components_lesson_page_blocks_exercises';
-  info: {
-    displayName: 'Exercise';
-    icon: 'question';
-  };
-  attributes: {
-    exercise: Attribute.Relation<
-      'lesson-page-blocks.exercise',
-      'oneToOne',
-      'api::exercise.exercise'
-    >;
-  };
-}
-
 export interface LessonPageBlocksParagraph extends Schema.Component {
   collectionName: 'components_lesson_page_blocks_paragraphs';
   info: {
@@ -199,7 +184,6 @@ declare module '@strapi/types' {
       'exercise-blocks.gap-filling': ExerciseBlocksGapFilling;
       'lesson-page-blocks.callout': LessonPageBlocksCallout;
       'lesson-page-blocks.conversation': LessonPageBlocksConversation;
-      'lesson-page-blocks.exercise': LessonPageBlocksExercise;
       'lesson-page-blocks.paragraph': LessonPageBlocksParagraph;
       'lesson-page-blocks.verb': LessonPageBlocksVerb;
       'lesson-page-blocks.vocab-block': LessonPageBlocksVocabBlock;

@@ -945,13 +945,17 @@ export interface ApiLessonPageLessonPage extends Schema.CollectionType {
         'lesson-page-blocks.vocab-block',
         'lesson-page-blocks.conversation',
         'lesson-page-blocks.callout',
-        'lesson-page-blocks.verb',
-        'lesson-page-blocks.exercise'
+        'lesson-page-blocks.verb'
       ]
     >;
     slug: Attribute.UID<'api::lesson-page.lesson-page', 'title'> &
       Attribute.Required;
     longTitle: Attribute.String;
+    exercise: Attribute.Relation<
+      'api::lesson-page.lesson-page',
+      'oneToOne',
+      'api::exercise.exercise'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
