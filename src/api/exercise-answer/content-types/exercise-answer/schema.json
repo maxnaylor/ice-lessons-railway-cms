@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "exercise_answers",
+  "info": {
+    "singularName": "exercise-answer",
+    "pluralName": "exercise-answers",
+    "displayName": "Exercise Answers",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "exercise": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::exercise.exercise"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "answerJSON": {
+      "type": "json"
+    },
+    "possibleMarks": {
+      "type": "integer"
+    },
+    "correctAnswers": {
+      "type": "integer"
+    },
+    "unfilledAnswers": {
+      "type": "integer"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "unstarted",
+        "started",
+        "complete-fullmarks",
+        "complete-partmarks"
+      ],
+      "default": "unstarted",
+      "required": false
+    }
+  }
+}

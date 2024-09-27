@@ -871,6 +871,54 @@ export interface ApiExerciseExercise extends Schema.CollectionType {
   };
 }
 
+export interface ApiExerciseAnswerExerciseAnswer extends Schema.CollectionType {
+  collectionName: 'exercise_answers';
+  info: {
+    singularName: 'exercise-answer';
+    pluralName: 'exercise-answers';
+    displayName: 'Exercise Answers';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    exercise: Attribute.Relation<
+      'api::exercise-answer.exercise-answer',
+      'oneToOne',
+      'api::exercise.exercise'
+    >;
+    user: Attribute.Relation<
+      'api::exercise-answer.exercise-answer',
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
+    answerJSON: Attribute.JSON;
+    possibleMarks: Attribute.Integer;
+    correctAnswers: Attribute.Integer;
+    unfilledAnswers: Attribute.Integer;
+    status: Attribute.Enumeration<
+      ['unstarted', 'started', 'complete-fullmarks', 'complete-partmarks']
+    > &
+      Attribute.DefaultTo<'unstarted'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::exercise-answer.exercise-answer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::exercise-answer.exercise-answer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiLessonLesson extends Schema.CollectionType {
   collectionName: 'lessons';
   info: {
@@ -1035,6 +1083,7 @@ declare module '@strapi/types' {
       'plugin::i18n.locale': PluginI18NLocale;
       'api::course.course': ApiCourseCourse;
       'api::exercise.exercise': ApiExerciseExercise;
+      'api::exercise-answer.exercise-answer': ApiExerciseAnswerExerciseAnswer;
       'api::lesson.lesson': ApiLessonLesson;
       'api::lesson-page.lesson-page': ApiLessonPageLessonPage;
       'api::purchase.purchase': ApiPurchasePurchase;
