@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "feedbacks",
+  "info": {
+    "singularName": "feedback",
+    "pluralName": "feedbacks",
+    "displayName": "Feedback",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "content",
+        "bug",
+        "other"
+      ]
+    },
+    "description": {
+      "type": "text"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "open",
+        "accepted",
+        "rejected",
+        "resolved"
+      ],
+      "default": "open"
+    },
+    "user_agent": {
+      "type": "string"
+    },
+    "ui_lang": {
+      "type": "enumeration",
+      "enum": [
+        "en-gb",
+        "is"
+      ]
+    },
+    "ui_appearance": {
+      "type": "enumeration",
+      "enum": [
+        "auto",
+        "dark",
+        "light"
+      ]
+    }
+  }
+}

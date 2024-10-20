@@ -919,6 +919,49 @@ export interface ApiExerciseAnswerExerciseAnswer extends Schema.CollectionType {
   };
 }
 
+export interface ApiFeedbackFeedback extends Schema.CollectionType {
+  collectionName: 'feedbacks';
+  info: {
+    singularName: 'feedback';
+    pluralName: 'feedbacks';
+    displayName: 'Feedback';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    user: Attribute.Relation<
+      'api::feedback.feedback',
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
+    type: Attribute.Enumeration<['content', 'bug', 'other']>;
+    description: Attribute.Text;
+    status: Attribute.Enumeration<
+      ['open', 'accepted', 'rejected', 'resolved']
+    > &
+      Attribute.DefaultTo<'open'>;
+    user_agent: Attribute.String;
+    ui_lang: Attribute.Enumeration<['en-gb', 'is']>;
+    ui_appearance: Attribute.Enumeration<['auto', 'dark', 'light']>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::feedback.feedback',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::feedback.feedback',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiLessonLesson extends Schema.CollectionType {
   collectionName: 'lessons';
   info: {
@@ -1084,6 +1127,7 @@ declare module '@strapi/types' {
       'api::course.course': ApiCourseCourse;
       'api::exercise.exercise': ApiExerciseExercise;
       'api::exercise-answer.exercise-answer': ApiExerciseAnswerExerciseAnswer;
+      'api::feedback.feedback': ApiFeedbackFeedback;
       'api::lesson.lesson': ApiLessonLesson;
       'api::lesson-page.lesson-page': ApiLessonPageLessonPage;
       'api::purchase.purchase': ApiPurchasePurchase;
