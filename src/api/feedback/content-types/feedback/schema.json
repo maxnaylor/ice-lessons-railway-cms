@@ -38,23 +38,32 @@
       ],
       "default": "open"
     },
-    "user_agent": {
+    "userAgent": {
       "type": "string"
     },
-    "ui_lang": {
+    "uiLang": {
       "type": "enumeration",
       "enum": [
         "en-gb",
         "is"
       ]
     },
-    "ui_appearance": {
+    "uiAppearance": {
       "type": "enumeration",
       "enum": [
         "auto",
         "dark",
         "light"
       ]
+    },
+    "href": {
+      "type": "string"
+    },
+    "windowWidth": {
+      "type": "integer"
+    },
+    "windowHeight": {
+      "type": "integer"
     }
   }
 }

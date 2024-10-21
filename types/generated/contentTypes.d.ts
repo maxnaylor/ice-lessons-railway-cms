@@ -942,9 +942,12 @@ export interface ApiFeedbackFeedback extends Schema.CollectionType {
       ['open', 'accepted', 'rejected', 'resolved']
     > &
       Attribute.DefaultTo<'open'>;
-    user_agent: Attribute.String;
-    ui_lang: Attribute.Enumeration<['en-gb', 'is']>;
-    ui_appearance: Attribute.Enumeration<['auto', 'dark', 'light']>;
+    userAgent: Attribute.String;
+    uiLang: Attribute.Enumeration<['en-gb', 'is']>;
+    uiAppearance: Attribute.Enumeration<['auto', 'dark', 'light']>;
+    href: Attribute.String;
+    windowWidth: Attribute.Integer;
+    windowHeight: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
