@@ -838,6 +838,59 @@ export interface ApiCourseCourse extends Schema.CollectionType {
   };
 }
 
+export interface ApiCourseProgressCourseProgress extends Schema.CollectionType {
+  collectionName: 'course_progresses';
+  info: {
+    singularName: 'course-progress';
+    pluralName: 'course-progresses';
+    displayName: 'Course Progress';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    user: Attribute.Relation<
+      'api::course-progress.course-progress',
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
+    course: Attribute.Relation<
+      'api::course-progress.course-progress',
+      'oneToOne',
+      'api::course.course'
+    >;
+    progress: Attribute.Integer &
+      Attribute.SetMinMax<
+        {
+          min: 0;
+          max: 100;
+        },
+        number
+      > &
+      Attribute.DefaultTo<0>;
+    purchase: Attribute.Relation<
+      'api::course-progress.course-progress',
+      'oneToOne',
+      'api::purchase.purchase'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::course-progress.course-progress',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::course-progress.course-progress',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiExerciseExercise extends Schema.CollectionType {
   collectionName: 'exercises';
   info: {
@@ -877,10 +930,9 @@ export interface ApiExerciseAnswerExerciseAnswer extends Schema.CollectionType {
     singularName: 'exercise-answer';
     pluralName: 'exercise-answers';
     displayName: 'Exercise Answers';
-    description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     exercise: Attribute.Relation<
@@ -903,7 +955,6 @@ export interface ApiExerciseAnswerExerciseAnswer extends Schema.CollectionType {
       Attribute.DefaultTo<'unstarted'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::exercise-answer.exercise-answer',
       'oneToOne',
@@ -1092,6 +1143,11 @@ export interface ApiPurchasePurchase extends Schema.CollectionType {
     >;
     transactionDate: Attribute.Date & Attribute.Required;
     invoiceLink: Attribute.String;
+    progress: Attribute.Relation<
+      'api::purchase.purchase',
+      'oneToOne',
+      'api::course-progress.course-progress'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1128,6 +1184,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::course.course': ApiCourseCourse;
+      'api::course-progress.course-progress': ApiCourseProgressCourseProgress;
       'api::exercise.exercise': ApiExerciseExercise;
       'api::exercise-answer.exercise-answer': ApiExerciseAnswerExerciseAnswer;
       'api::feedback.feedback': ApiFeedbackFeedback;

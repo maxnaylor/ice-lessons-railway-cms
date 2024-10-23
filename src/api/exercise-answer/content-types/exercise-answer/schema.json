@@ -4,11 +4,10 @@
   "info": {
     "singularName": "exercise-answer",
     "pluralName": "exercise-answers",
-    "displayName": "Exercise Answers",
-    "description": ""
+    "displayName": "Exercise Answers"
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
@@ -42,8 +41,7 @@
         "complete-fullmarks",
         "complete-partmarks"
       ],
-      "default": "unstarted",
-      "required": false
+      "default": "unstarted"
     }
   }
 }

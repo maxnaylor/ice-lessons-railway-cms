@@ -28,6 +28,11 @@
     },
     "invoiceLink": {
       "type": "string"
+    },
+    "progress": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::course-progress.course-progress"
     }
   }
 }
