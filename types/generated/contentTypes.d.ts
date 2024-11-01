@@ -729,6 +729,9 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     appearance: Attribute.Enumeration<['auto', 'light', 'dark']> &
       Attribute.DefaultTo<'auto'>;
     trialExpiry: Attribute.DateTime;
+    disableCaching: Attribute.Boolean & Attribute.DefaultTo<false>;
+    advancedMode: Attribute.Boolean & Attribute.DefaultTo<false>;
+    lastLogin: Attribute.DateTime;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -921,11 +924,6 @@ export interface ApiCourseProgressCourseProgress extends Schema.CollectionType {
         number
       > &
       Attribute.DefaultTo<0>;
-    purchase: Attribute.Relation<
-      'api::course-progress.course-progress',
-      'oneToOne',
-      'api::purchase.purchase'
-    >;
     lessonProgress: Attribute.JSON;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1201,6 +1199,7 @@ export interface ApiPurchasePurchase extends Schema.CollectionType {
       'oneToOne',
       'api::course-progress.course-progress'
     >;
+    purchaseExpiry: Attribute.DateTime;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

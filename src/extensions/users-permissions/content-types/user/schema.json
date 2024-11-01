@@ -96,6 +96,17 @@
     },
     "trialExpiry": {
       "type": "datetime"
+    },
+    "disableCaching": {
+      "type": "boolean",
+      "default": false
+    },
+    "advancedMode": {
+      "type": "boolean",
+      "default": false
+    },
+    "lastLogin": {
+      "type": "datetime"
     }
   }
 }
