@@ -24,10 +24,12 @@
     },
     "transactionDate": {
       "type": "date",
-      "required": true
+      "required": true,
+      "pluginOptions": {}
     },
     "invoiceLink": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {}
     },
     "progress": {
       "type": "relation",

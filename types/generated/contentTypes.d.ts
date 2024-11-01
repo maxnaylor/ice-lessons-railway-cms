@@ -804,8 +804,19 @@ export interface ApiCourseCourse extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    name: Attribute.String & Attribute.Required;
+    name: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     productID: Attribute.UID;
     lessons: Attribute.Relation<
       'api::course.course',
@@ -813,13 +824,48 @@ export interface ApiCourseCourse extends Schema.CollectionType {
       'api::lesson.lesson'
     >;
     slug: Attribute.UID<'api::course.course', 'name'>;
-    intro: Attribute.Blocks;
-    cover: Attribute.Media;
-    cardTagline: Attribute.Text;
-    features: Attribute.Component<'course-cards.course-feature-rows', true>;
-    duration: Attribute.Integer;
-    assessmentType: Attribute.String;
-    price: Attribute.Decimal;
+    intro: Attribute.Blocks &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    cover: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    cardTagline: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    features: Attribute.Component<'course-cards.course-feature-rows', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    duration: Attribute.Integer &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    assessmentType: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    price: Attribute.Decimal &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -835,6 +881,12 @@ export interface ApiCourseCourse extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::course.course',
+      'oneToMany',
+      'api::course.course'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -874,6 +926,7 @@ export interface ApiCourseProgressCourseProgress extends Schema.CollectionType {
       'oneToOne',
       'api::purchase.purchase'
     >;
+    lessonProgress: Attribute.JSON;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

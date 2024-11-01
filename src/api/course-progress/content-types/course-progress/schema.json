@@ -32,6 +32,9 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::purchase.purchase"
+    },
+    "lessonProgress": {
+      "type": "json"
     }
   }
 }
