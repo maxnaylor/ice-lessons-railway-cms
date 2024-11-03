@@ -1,6 +1,7 @@
-import type { Attribute, Schema } from '@strapi/strapi';
+import type { Schema, Struct } from '@strapi/strapi';
 
-export interface ConversationBlocksConversationBlock extends Schema.Component {
+export interface ConversationBlocksConversationBlock
+  extends Struct.ComponentSchema {
   collectionName: 'components_conversation_blocks_conversation_blocks';
   info: {
     description: '';
@@ -8,23 +9,23 @@ export interface ConversationBlocksConversationBlock extends Schema.Component {
     icon: 'microphone';
   };
   attributes: {
-    content: Attribute.Blocks;
-    speaker: Attribute.String;
+    content: Schema.Attribute.Blocks;
+    speaker: Schema.Attribute.String;
   };
 }
 
-export interface CourseCardsCourseFeatureRows extends Schema.Component {
+export interface CourseCardsCourseFeatureRows extends Struct.ComponentSchema {
   collectionName: 'components_course_cards_course_feature_rows';
   info: {
     displayName: 'Course Feature Rows';
     icon: 'check';
   };
   attributes: {
-    feature: Attribute.Text;
+    feature: Schema.Attribute.Text;
   };
 }
 
-export interface ExerciseBlocksGapFilling extends Schema.Component {
+export interface ExerciseBlocksGapFilling extends Struct.ComponentSchema {
   collectionName: 'components_exercise_blocks_gap_fillings';
   info: {
     description: '';
@@ -32,34 +33,34 @@ export interface ExerciseBlocksGapFilling extends Schema.Component {
     icon: 'book';
   };
   attributes: {
-    rows: Attribute.Component<'exercise-blocks.gap-filling-row', true>;
+    rows: Schema.Attribute.Component<'exercise-blocks.gap-filling-row', true>;
   };
 }
 
-export interface ExerciseBlocksGapFillingRow extends Schema.Component {
+export interface ExerciseBlocksGapFillingRow extends Struct.ComponentSchema {
   collectionName: 'components_exercise_blocks_gap_filling_rows';
   info: {
     displayName: 'Gap Filling Row';
     icon: 'bulletList';
   };
   attributes: {
-    content: Attribute.Text;
+    content: Schema.Attribute.Text;
   };
 }
 
-export interface LessonPageBlocksCallout extends Schema.Component {
+export interface LessonPageBlocksCallout extends Struct.ComponentSchema {
   collectionName: 'components_lesson_page_blocks_callouts';
   info: {
     displayName: 'Callout';
     icon: 'message';
   };
   attributes: {
-    content: Attribute.Blocks & Attribute.Required;
-    type: Attribute.Enumeration<['tip', 'task']>;
+    content: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    type: Schema.Attribute.Enumeration<['tip', 'task']>;
   };
 }
 
-export interface LessonPageBlocksConversation extends Schema.Component {
+export interface LessonPageBlocksConversation extends Struct.ComponentSchema {
   collectionName: 'components_lesson_page_blocks_conversations';
   info: {
     description: '';
@@ -67,12 +68,15 @@ export interface LessonPageBlocksConversation extends Schema.Component {
     icon: 'quote';
   };
   attributes: {
-    audio: Attribute.Media<'audios', true>;
-    row: Attribute.Component<'conversation-blocks.conversation-block', true>;
+    audio: Schema.Attribute.Media<'audios', true>;
+    row: Schema.Attribute.Component<
+      'conversation-blocks.conversation-block',
+      true
+    >;
   };
 }
 
-export interface LessonPageBlocksParagraph extends Schema.Component {
+export interface LessonPageBlocksParagraph extends Struct.ComponentSchema {
   collectionName: 'components_lesson_page_blocks_paragraphs';
   info: {
     description: '';
@@ -80,28 +84,28 @@ export interface LessonPageBlocksParagraph extends Schema.Component {
     icon: 'file';
   };
   attributes: {
-    content: Attribute.Blocks;
+    content: Schema.Attribute.Blocks;
   };
 }
 
-export interface LessonPageBlocksVerb extends Schema.Component {
+export interface LessonPageBlocksVerb extends Struct.ComponentSchema {
   collectionName: 'components_lesson_page_blocks_verbs';
   info: {
     displayName: 'Verb';
     icon: 'walk';
   };
   attributes: {
-    firstPlu: Attribute.String;
-    firstSing: Attribute.String;
-    infinitive: Attribute.String;
-    secondPlu: Attribute.String;
-    secondSing: Attribute.String;
-    thirdPlu: Attribute.String;
-    thirdSing: Attribute.String;
+    firstPlu: Schema.Attribute.String;
+    firstSing: Schema.Attribute.String;
+    infinitive: Schema.Attribute.String;
+    secondPlu: Schema.Attribute.String;
+    secondSing: Schema.Attribute.String;
+    thirdPlu: Schema.Attribute.String;
+    thirdSing: Schema.Attribute.String;
   };
 }
 
-export interface LessonPageBlocksVocabBlock extends Schema.Component {
+export interface LessonPageBlocksVocabBlock extends Struct.ComponentSchema {
   collectionName: 'components_lesson_page_blocks_vocab_blocks';
   info: {
     description: '';
@@ -109,25 +113,25 @@ export interface LessonPageBlocksVocabBlock extends Schema.Component {
     icon: 'layer';
   };
   attributes: {
-    columns: Attribute.Integer &
-      Attribute.SetMinMax<
+    columns: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
         {
           max: 4;
           min: 1;
         },
         number
       > &
-      Attribute.DefaultTo<1>;
-    hero: Attribute.Boolean & Attribute.DefaultTo<false>;
-    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    imageSize: Attribute.Enumeration<['large', 'medium', 'small']> &
-      Attribute.DefaultTo<'large'>;
-    row: Attribute.Component<'vocab-blocks.audio-row', true>;
-    vAlign: Attribute.Enumeration<['top', 'center', 'bottom']>;
+      Schema.Attribute.DefaultTo<1>;
+    hero: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    imageSize: Schema.Attribute.Enumeration<['large', 'medium', 'small']> &
+      Schema.Attribute.DefaultTo<'large'>;
+    row: Schema.Attribute.Component<'vocab-blocks.audio-row', true>;
+    vAlign: Schema.Attribute.Enumeration<['top', 'center', 'bottom']>;
   };
 }
 
-export interface VocabBlocksAudioRow extends Schema.Component {
+export interface VocabBlocksAudioRow extends Struct.ComponentSchema {
   collectionName: 'components_vocab_blocks_audio_rows';
   info: {
     description: '';
@@ -135,27 +139,27 @@ export interface VocabBlocksAudioRow extends Schema.Component {
     icon: 'microphone';
   };
   attributes: {
-    audio: Attribute.Media<'audios'>;
-    column: Attribute.Integer &
-      Attribute.SetMinMax<
+    audio: Schema.Attribute.Media<'audios'>;
+    column: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
         {
           max: 4;
           min: 1;
         },
         number
       > &
-      Attribute.DefaultTo<1>;
-    content: Attribute.Blocks;
-    gap: Attribute.Boolean & Attribute.DefaultTo<false>;
-    image: Attribute.Media<'images'>;
-    imageSize: Attribute.Enumeration<['large', 'medium', 'small']> &
-      Attribute.DefaultTo<'medium'>;
-    isCentred: Attribute.Boolean & Attribute.DefaultTo<false>;
-    isColumn: Attribute.Boolean & Attribute.DefaultTo<false>;
+      Schema.Attribute.DefaultTo<1>;
+    content: Schema.Attribute.Blocks;
+    gap: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    image: Schema.Attribute.Media<'images'>;
+    imageSize: Schema.Attribute.Enumeration<['large', 'medium', 'small']> &
+      Schema.Attribute.DefaultTo<'medium'>;
+    isCentred: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    isColumn: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
   };
 }
 
-export interface VocabBlocksContent extends Schema.Component {
+export interface VocabBlocksContent extends Struct.ComponentSchema {
   collectionName: 'components_vocab_blocks_contents';
   info: {
     displayName: 'content';
@@ -164,20 +168,20 @@ export interface VocabBlocksContent extends Schema.Component {
   attributes: {};
 }
 
-export interface VocabBlocksSimple extends Schema.Component {
+export interface VocabBlocksSimple extends Struct.ComponentSchema {
   collectionName: 'components_vocab_blocks_simples';
   info: {
     displayName: 'Simple';
     icon: 'write';
   };
   attributes: {
-    content: Attribute.Blocks;
+    content: Schema.Attribute.Blocks;
   };
 }
 
-declare module '@strapi/types' {
-  export module Shared {
-    export interface Components {
+declare module '@strapi/strapi' {
+  export module Public {
+    export interface ComponentSchemas {
       'conversation-blocks.conversation-block': ConversationBlocksConversationBlock;
       'course-cards.course-feature-rows': CourseCardsCourseFeatureRows;
       'exercise-blocks.gap-filling': ExerciseBlocksGapFilling;

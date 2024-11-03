@@ -3,6 +3,9 @@ module.exports = ({ env }) => ({
     config: {
       jwtSecret: env('JWT_SECRET'),
     },
+    register: {
+      allowedFields: ["firstName", "trialExpiry"],
+    },
   },
   upload: {
     config: {
