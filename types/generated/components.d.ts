@@ -1,15 +1,15 @@
-import type { Schema, Attribute } from '@strapi/strapi';
+import type { Attribute, Schema } from '@strapi/strapi';
 
 export interface ConversationBlocksConversationBlock extends Schema.Component {
   collectionName: 'components_conversation_blocks_conversation_blocks';
   info: {
+    description: '';
     displayName: 'Conversation Block';
     icon: 'microphone';
-    description: '';
   };
   attributes: {
-    speaker: Attribute.String;
     content: Attribute.Blocks;
+    speaker: Attribute.String;
   };
 }
 
@@ -24,6 +24,18 @@ export interface CourseCardsCourseFeatureRows extends Schema.Component {
   };
 }
 
+export interface ExerciseBlocksGapFilling extends Schema.Component {
+  collectionName: 'components_exercise_blocks_gap_fillings';
+  info: {
+    description: '';
+    displayName: 'Gap Filling';
+    icon: 'book';
+  };
+  attributes: {
+    rows: Attribute.Component<'exercise-blocks.gap-filling-row', true>;
+  };
+}
+
 export interface ExerciseBlocksGapFillingRow extends Schema.Component {
   collectionName: 'components_exercise_blocks_gap_filling_rows';
   info: {
@@ -35,18 +47,6 @@ export interface ExerciseBlocksGapFillingRow extends Schema.Component {
   };
 }
 
-export interface ExerciseBlocksGapFilling extends Schema.Component {
-  collectionName: 'components_exercise_blocks_gap_fillings';
-  info: {
-    displayName: 'Gap Filling';
-    icon: 'book';
-    description: '';
-  };
-  attributes: {
-    rows: Attribute.Component<'exercise-blocks.gap-filling-row', true>;
-  };
-}
-
 export interface LessonPageBlocksCallout extends Schema.Component {
   collectionName: 'components_lesson_page_blocks_callouts';
   info: {
@@ -54,30 +54,30 @@ export interface LessonPageBlocksCallout extends Schema.Component {
     icon: 'message';
   };
   attributes: {
-    type: Attribute.Enumeration<['tip', 'task']>;
     content: Attribute.Blocks & Attribute.Required;
+    type: Attribute.Enumeration<['tip', 'task']>;
   };
 }
 
 export interface LessonPageBlocksConversation extends Schema.Component {
   collectionName: 'components_lesson_page_blocks_conversations';
   info: {
+    description: '';
     displayName: 'Conversation';
     icon: 'quote';
-    description: '';
   };
   attributes: {
+    audio: Attribute.Media<'audios', true>;
     row: Attribute.Component<'conversation-blocks.conversation-block', true>;
-    audio: Attribute.Media;
   };
 }
 
 export interface LessonPageBlocksParagraph extends Schema.Component {
   collectionName: 'components_lesson_page_blocks_paragraphs';
   info: {
+    description: '';
     displayName: 'Paragraph';
     icon: 'file';
-    description: '';
   };
   attributes: {
     content: Attribute.Blocks;
@@ -91,38 +91,38 @@ export interface LessonPageBlocksVerb extends Schema.Component {
     icon: 'walk';
   };
   attributes: {
-    infinitive: Attribute.String;
-    firstSing: Attribute.String;
-    secondSing: Attribute.String;
-    thirdSing: Attribute.String;
     firstPlu: Attribute.String;
+    firstSing: Attribute.String;
+    infinitive: Attribute.String;
     secondPlu: Attribute.String;
+    secondSing: Attribute.String;
     thirdPlu: Attribute.String;
+    thirdSing: Attribute.String;
   };
 }
 
 export interface LessonPageBlocksVocabBlock extends Schema.Component {
   collectionName: 'components_lesson_page_blocks_vocab_blocks';
   info: {
+    description: '';
     displayName: 'Tile Block';
     icon: 'layer';
-    description: '';
   };
   attributes: {
-    image: Attribute.Media;
-    imageSize: Attribute.Enumeration<['large', 'medium', 'small']> &
-      Attribute.DefaultTo<'large'>;
-    row: Attribute.Component<'vocab-blocks.audio-row', true>;
-    hero: Attribute.Boolean & Attribute.DefaultTo<false>;
     columns: Attribute.Integer &
       Attribute.SetMinMax<
         {
-          min: 1;
           max: 4;
+          min: 1;
         },
         number
       > &
       Attribute.DefaultTo<1>;
+    hero: Attribute.Boolean & Attribute.DefaultTo<false>;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    imageSize: Attribute.Enumeration<['large', 'medium', 'small']> &
+      Attribute.DefaultTo<'large'>;
+    row: Attribute.Component<'vocab-blocks.audio-row', true>;
     vAlign: Attribute.Enumeration<['top', 'center', 'bottom']>;
   };
 }
@@ -130,28 +130,28 @@ export interface LessonPageBlocksVocabBlock extends Schema.Component {
 export interface VocabBlocksAudioRow extends Schema.Component {
   collectionName: 'components_vocab_blocks_audio_rows';
   info: {
+    description: '';
     displayName: 'Audio Row';
     icon: 'microphone';
-    description: '';
   };
   attributes: {
-    content: Attribute.Blocks;
-    audio: Attribute.Media;
+    audio: Attribute.Media<'audios'>;
     column: Attribute.Integer &
       Attribute.SetMinMax<
         {
-          min: 1;
           max: 4;
+          min: 1;
         },
         number
       > &
       Attribute.DefaultTo<1>;
-    image: Attribute.Media;
+    content: Attribute.Blocks;
     gap: Attribute.Boolean & Attribute.DefaultTo<false>;
-    isColumn: Attribute.Boolean & Attribute.DefaultTo<false>;
-    isCentred: Attribute.Boolean & Attribute.DefaultTo<false>;
+    image: Attribute.Media<'images'>;
     imageSize: Attribute.Enumeration<['large', 'medium', 'small']> &
       Attribute.DefaultTo<'medium'>;
+    isCentred: Attribute.Boolean & Attribute.DefaultTo<false>;
+    isColumn: Attribute.Boolean & Attribute.DefaultTo<false>;
   };
 }
 
@@ -180,8 +180,8 @@ declare module '@strapi/types' {
     export interface Components {
       'conversation-blocks.conversation-block': ConversationBlocksConversationBlock;
       'course-cards.course-feature-rows': CourseCardsCourseFeatureRows;
-      'exercise-blocks.gap-filling-row': ExerciseBlocksGapFillingRow;
       'exercise-blocks.gap-filling': ExerciseBlocksGapFilling;
+      'exercise-blocks.gap-filling-row': ExerciseBlocksGapFillingRow;
       'lesson-page-blocks.callout': LessonPageBlocksCallout;
       'lesson-page-blocks.conversation': LessonPageBlocksConversation;
       'lesson-page-blocks.paragraph': LessonPageBlocksParagraph;
