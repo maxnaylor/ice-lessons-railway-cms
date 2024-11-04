@@ -1220,6 +1220,7 @@ export interface PluginUsersPermissionsUser
       'plugin::users-permissions.user'
     > &
       Schema.Attribute.Private;
+    onboarded: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     password: Schema.Attribute.Password &
       Schema.Attribute.Private &
       Schema.Attribute.SetMinMaxLength<{

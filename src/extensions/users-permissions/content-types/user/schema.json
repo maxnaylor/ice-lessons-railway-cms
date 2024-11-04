@@ -107,6 +107,10 @@
     },
     "lastLogin": {
       "type": "datetime"
+    },
+    "onboarded": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
