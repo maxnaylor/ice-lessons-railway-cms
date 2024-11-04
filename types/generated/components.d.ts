@@ -98,8 +98,7 @@ export interface LessonPageBlocksVerb extends Struct.ComponentSchema {
   attributes: {
     firstPlu: Schema.Attribute.String;
     firstSing: Schema.Attribute.String;
-    infinitive: Schema.Attribute.String;
-    infinitiveBlocks: Schema.Attribute.Blocks;
+    infinitive: Schema.Attribute.Blocks;
     secondPlu: Schema.Attribute.String;
     secondSing: Schema.Attribute.String;
     thirdPlu: Schema.Attribute.String;
