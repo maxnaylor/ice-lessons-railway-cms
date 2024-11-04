@@ -91,6 +91,7 @@ export interface LessonPageBlocksParagraph extends Struct.ComponentSchema {
 export interface LessonPageBlocksVerb extends Struct.ComponentSchema {
   collectionName: 'components_lesson_page_blocks_verbs';
   info: {
+    description: '';
     displayName: 'Verb';
     icon: 'walk';
   };
@@ -98,6 +99,7 @@ export interface LessonPageBlocksVerb extends Struct.ComponentSchema {
     firstPlu: Schema.Attribute.String;
     firstSing: Schema.Attribute.String;
     infinitive: Schema.Attribute.String;
+    infinitiveBlocks: Schema.Attribute.Blocks;
     secondPlu: Schema.Attribute.String;
     secondSing: Schema.Attribute.String;
     thirdPlu: Schema.Attribute.String;
