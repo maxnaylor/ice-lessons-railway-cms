@@ -426,6 +426,7 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
   };
   attributes: {
     assessmentType: Schema.Attribute.String;
+    available: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     cardTagline: Schema.Attribute.Text;
     cover: Schema.Attribute.Media<'images'>;
     createdAt: Schema.Attribute.DateTime;

@@ -64,6 +64,11 @@
     "price": {
       "type": "decimal",
       "pluginOptions": {}
+    },
+    "available": {
+      "type": "boolean",
+      "default": false,
+      "required": false
     }
   }
 }
