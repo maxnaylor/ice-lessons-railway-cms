@@ -509,7 +509,9 @@ export interface ApiExerciseExercise extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    content: Schema.Attribute.DynamicZone<['exercise-blocks.gap-filling']>;
+    content: Schema.Attribute.DynamicZone<
+      ['exercise-blocks.gap-filling', 'exercise-blocks.order-chips']
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

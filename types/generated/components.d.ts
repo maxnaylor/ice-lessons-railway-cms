@@ -48,6 +48,16 @@ export interface ExerciseBlocksGapFillingRow extends Struct.ComponentSchema {
   };
 }
 
+export interface ExerciseBlocksOrderChips extends Struct.ComponentSchema {
+  collectionName: 'components_exercise_blocks_order_chips';
+  info: {
+    displayName: 'Order Chips';
+  };
+  attributes: {
+    rows: Schema.Attribute.Component<'exercise-blocks.gap-filling-row', true>;
+  };
+}
+
 export interface LessonPageBlocksCallout extends Struct.ComponentSchema {
   collectionName: 'components_lesson_page_blocks_callouts';
   info: {
@@ -187,6 +197,7 @@ declare module '@strapi/strapi' {
       'course-cards.course-feature-rows': CourseCardsCourseFeatureRows;
       'exercise-blocks.gap-filling': ExerciseBlocksGapFilling;
       'exercise-blocks.gap-filling-row': ExerciseBlocksGapFillingRow;
+      'exercise-blocks.order-chips': ExerciseBlocksOrderChips;
       'lesson-page-blocks.callout': LessonPageBlocksCallout;
       'lesson-page-blocks.conversation': LessonPageBlocksConversation;
       'lesson-page-blocks.paragraph': LessonPageBlocksParagraph;
