@@ -1,8 +1,7 @@
 {
   "collectionName": "components_exercise_blocks_gap_filling_rows",
   "info": {
-    "displayName": "Gap Filling Row",
-    "icon": "bulletList"
+    "displayName": "Gap Filling Row"
   },
   "options": {},
   "attributes": {

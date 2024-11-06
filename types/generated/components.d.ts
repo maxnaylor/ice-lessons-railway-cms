@@ -41,7 +41,6 @@ export interface ExerciseBlocksGapFillingRow extends Struct.ComponentSchema {
   collectionName: 'components_exercise_blocks_gap_filling_rows';
   info: {
     displayName: 'Gap Filling Row';
-    icon: 'bulletList';
   };
   attributes: {
     content: Schema.Attribute.Text;
@@ -51,10 +50,37 @@ export interface ExerciseBlocksGapFillingRow extends Struct.ComponentSchema {
 export interface ExerciseBlocksOrderChips extends Struct.ComponentSchema {
   collectionName: 'components_exercise_blocks_order_chips';
   info: {
+    description: '';
     displayName: 'Order Chips';
   };
   attributes: {
-    rows: Schema.Attribute.Component<'exercise-blocks.gap-filling-row', true>;
+    rows: Schema.Attribute.Component<'exercise-blocks.order-chips-row', true>;
+  };
+}
+
+export interface ExerciseBlocksOrderChipsAnswerRow
+  extends Struct.ComponentSchema {
+  collectionName: 'components_exercise_blocks_order_chips_answer_rows';
+  info: {
+    displayName: 'Order Chips Answer Row';
+  };
+  attributes: {
+    content: Schema.Attribute.Text;
+  };
+}
+
+export interface ExerciseBlocksOrderChipsRow extends Struct.ComponentSchema {
+  collectionName: 'components_exercise_blocks_order_chips_rows';
+  info: {
+    description: '';
+    displayName: 'Order Chips Row';
+  };
+  attributes: {
+    answers: Schema.Attribute.Component<
+      'exercise-blocks.order-chips-answer-row',
+      true
+    >;
+    prompt: Schema.Attribute.Text;
   };
 }
 
@@ -198,6 +224,8 @@ declare module '@strapi/strapi' {
       'exercise-blocks.gap-filling': ExerciseBlocksGapFilling;
       'exercise-blocks.gap-filling-row': ExerciseBlocksGapFillingRow;
       'exercise-blocks.order-chips': ExerciseBlocksOrderChips;
+      'exercise-blocks.order-chips-answer-row': ExerciseBlocksOrderChipsAnswerRow;
+      'exercise-blocks.order-chips-row': ExerciseBlocksOrderChipsRow;
       'lesson-page-blocks.callout': LessonPageBlocksCallout;
       'lesson-page-blocks.conversation': LessonPageBlocksConversation;
       'lesson-page-blocks.paragraph': LessonPageBlocksParagraph;

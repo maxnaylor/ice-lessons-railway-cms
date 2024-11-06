@@ -1,14 +1,15 @@
 {
   "collectionName": "components_exercise_blocks_order_chips",
   "info": {
-    "displayName": "Order Chips"
+    "displayName": "Order Chips",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "rows": {
       "type": "component",
       "repeatable": true,
-      "component": "exercise-blocks.gap-filling-row"
+      "component": "exercise-blocks.order-chips-row"
     }
   }
 }
