@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_exercise_blocks_bucket_sort_items",
+  "info": {
+    "displayName": "Bucket Sort Item",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "item": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "text"
+    },
+    "bucket": {
+      "type": "integer"
+    }
+  }
+}

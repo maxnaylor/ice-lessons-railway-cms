@@ -16,7 +16,8 @@
       "type": "dynamiczone",
       "components": [
         "exercise-blocks.gap-filling",
-        "exercise-blocks.order-chips"
+        "exercise-blocks.order-chips",
+        "exercise-blocks.bucket-sort"
       ]
     },
     "title": {

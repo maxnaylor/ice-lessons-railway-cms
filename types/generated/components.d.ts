@@ -25,6 +25,48 @@ export interface CourseCardsCourseFeatureRows extends Struct.ComponentSchema {
   };
 }
 
+export interface ExerciseBlocksBucketSort extends Struct.ComponentSchema {
+  collectionName: 'components_exercise_blocks_bucket_sorts';
+  info: {
+    description: '';
+    displayName: 'Bucket Sort';
+    icon: 'manyWays';
+  };
+  attributes: {
+    buckets: Schema.Attribute.Component<
+      'exercise-blocks.bucket-sort-bucket',
+      true
+    >;
+    rows: Schema.Attribute.Component<'exercise-blocks.bucket-sort-item', true>;
+  };
+}
+
+export interface ExerciseBlocksBucketSortBucket extends Struct.ComponentSchema {
+  collectionName: 'components_exercise_blocks_bucket_sort_buckets';
+  info: {
+    description: '';
+    displayName: 'Bucket Sort Bucket';
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    identifier: Schema.Attribute.Integer;
+    label: Schema.Attribute.String;
+  };
+}
+
+export interface ExerciseBlocksBucketSortItem extends Struct.ComponentSchema {
+  collectionName: 'components_exercise_blocks_bucket_sort_items';
+  info: {
+    description: '';
+    displayName: 'Bucket Sort Item';
+  };
+  attributes: {
+    bucket: Schema.Attribute.Integer;
+    item: Schema.Attribute.String;
+    notes: Schema.Attribute.Text;
+  };
+}
+
 export interface ExerciseBlocksGapFilling extends Struct.ComponentSchema {
   collectionName: 'components_exercise_blocks_gap_fillings';
   info: {
@@ -222,6 +264,9 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'conversation-blocks.conversation-block': ConversationBlocksConversationBlock;
       'course-cards.course-feature-rows': CourseCardsCourseFeatureRows;
+      'exercise-blocks.bucket-sort': ExerciseBlocksBucketSort;
+      'exercise-blocks.bucket-sort-bucket': ExerciseBlocksBucketSortBucket;
+      'exercise-blocks.bucket-sort-item': ExerciseBlocksBucketSortItem;
       'exercise-blocks.gap-filling': ExerciseBlocksGapFilling;
       'exercise-blocks.gap-filling-row': ExerciseBlocksGapFillingRow;
       'exercise-blocks.order-chips': ExerciseBlocksOrderChips;
