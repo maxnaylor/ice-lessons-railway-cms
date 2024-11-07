@@ -474,6 +474,10 @@ export interface ApiExerciseAnswerExerciseAnswer
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     exercise: Schema.Attribute.Relation<'oneToOne', 'api::exercise.exercise'>;
+    lessonPage: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::lesson-page.lesson-page'
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -684,10 +688,6 @@ export interface ApiPurchasePurchase extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     product: Schema.Attribute.Relation<'oneToOne', 'api::course.course'>;
-    progress: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::course-progress.course-progress'
-    >;
     publishedAt: Schema.Attribute.DateTime;
     purchaseExpiry: Schema.Attribute.DateTime;
     transactionDate: Schema.Attribute.Date & Schema.Attribute.Required;

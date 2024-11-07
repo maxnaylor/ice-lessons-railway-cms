@@ -21,6 +21,16 @@
       "relation": "oneToOne",
       "target": "plugin::users-permissions.user"
     },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "unstarted",
+        "started",
+        "complete-fullmarks",
+        "complete-partmarks"
+      ],
+      "default": "unstarted"
+    },
     "answerJSON": {
       "type": "json"
     },
@@ -33,15 +43,10 @@
     "unfilledAnswers": {
       "type": "integer"
     },
-    "status": {
-      "type": "enumeration",
-      "enum": [
-        "unstarted",
-        "started",
-        "complete-fullmarks",
-        "complete-partmarks"
-      ],
-      "default": "unstarted"
+    "lessonPage": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::lesson-page.lesson-page"
     }
   }
 }
