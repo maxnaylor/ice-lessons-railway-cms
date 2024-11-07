@@ -4,7 +4,8 @@
   "info": {
     "singularName": "exercise-answer",
     "pluralName": "exercise-answers",
-    "displayName": "Exercise Answers"
+    "displayName": "Exercise Answers",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -21,7 +22,7 @@
       "relation": "oneToOne",
       "target": "plugin::users-permissions.user"
     },
-    "status": {
+    "state": {
       "type": "enumeration",
       "enum": [
         "unstarted",

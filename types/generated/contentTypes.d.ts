@@ -460,6 +460,7 @@ export interface ApiExerciseAnswerExerciseAnswer
   extends Struct.CollectionTypeSchema {
   collectionName: 'exercise_answers';
   info: {
+    description: '';
     displayName: 'Exercise Answers';
     pluralName: 'exercise-answers';
     singularName: 'exercise-answer';
@@ -486,7 +487,7 @@ export interface ApiExerciseAnswerExerciseAnswer
       Schema.Attribute.Private;
     possibleMarks: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
-    status: Schema.Attribute.Enumeration<
+    state: Schema.Attribute.Enumeration<
       ['unstarted', 'started', 'complete-fullmarks', 'complete-partmarks']
     > &
       Schema.Attribute.DefaultTo<'unstarted'>;
