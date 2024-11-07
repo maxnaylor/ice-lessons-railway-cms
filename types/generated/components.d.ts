@@ -76,6 +76,7 @@ export interface ExerciseBlocksOrderChipsRow extends Struct.ComponentSchema {
     displayName: 'Order Chips Row';
   };
   attributes: {
+    afterPrompt: Schema.Attribute.Text;
     answers: Schema.Attribute.Component<
       'exercise-blocks.order-chips-answer-row',
       true
