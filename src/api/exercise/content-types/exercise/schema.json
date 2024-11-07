@@ -21,8 +21,7 @@
     },
     "title": {
       "type": "string",
-      "required": true,
-      "private": true
+      "required": true
     },
     "instructions": {
       "type": "blocks"
