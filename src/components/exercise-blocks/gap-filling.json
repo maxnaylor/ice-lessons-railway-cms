@@ -8,7 +8,6 @@
   "options": {},
   "attributes": {
     "rows": {
-      "displayName": "Gap Filling Row",
       "type": "component",
       "repeatable": true,
       "component": "exercise-blocks.gap-filling-row"

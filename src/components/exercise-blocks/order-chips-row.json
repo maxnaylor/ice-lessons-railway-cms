@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_exercise_blocks_order_chips_rows",
+  "info": {
+    "displayName": "Order Chips Row",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "answers": {
+      "displayName": "Order Chips Answer Row",
+      "type": "component",
+      "repeatable": true,
+      "component": "exercise-blocks.order-chips-answer-row"
+    },
+    "prompt": {
+      "type": "text"
+    },
+    "afterPrompt": {
+      "type": "text"
+    }
+  }
+}

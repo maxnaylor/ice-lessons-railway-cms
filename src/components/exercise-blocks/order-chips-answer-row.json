@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_exercise_blocks_order_chips_answer_rows",
+  "info": {
+    "displayName": "Order Chips Answer Row"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "text"
+    }
+  }
+}

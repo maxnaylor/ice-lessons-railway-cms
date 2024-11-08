@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_exercise_blocks_bucket_sorts",
+  "info": {
+    "displayName": "Bucket Sort",
+    "icon": "manyWays",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "buckets": {
+      "displayName": "Bucket Sort Bucket",
+      "type": "component",
+      "repeatable": true,
+      "component": "exercise-blocks.bucket-sort-bucket"
+    },
+    "rows": {
+      "type": "component",
+      "repeatable": true,
+      "component": "exercise-blocks.bucket-sort-item"
+    }
+  }
+}

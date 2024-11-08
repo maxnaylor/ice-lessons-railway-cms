@@ -1,161 +1,245 @@
-import type { Schema, Attribute } from '@strapi/strapi';
+import type { Schema, Struct } from '@strapi/strapi';
 
-export interface ConversationBlocksConversationBlock extends Schema.Component {
+export interface ConversationBlocksConversationBlock
+  extends Struct.ComponentSchema {
   collectionName: 'components_conversation_blocks_conversation_blocks';
   info: {
+    description: '';
     displayName: 'Conversation Block';
     icon: 'microphone';
-    description: '';
   };
   attributes: {
-    speaker: Attribute.String;
-    content: Attribute.Blocks;
+    content: Schema.Attribute.Blocks;
+    speaker: Schema.Attribute.String;
   };
 }
 
-export interface CourseCardsCourseFeatureRows extends Schema.Component {
+export interface CourseCardsCourseFeatureRows extends Struct.ComponentSchema {
   collectionName: 'components_course_cards_course_feature_rows';
   info: {
     displayName: 'Course Feature Rows';
     icon: 'check';
   };
   attributes: {
-    feature: Attribute.Text;
+    feature: Schema.Attribute.Text;
   };
 }
 
-export interface ExerciseBlocksGapFillingRow extends Schema.Component {
+export interface ExerciseBlocksBucketSort extends Struct.ComponentSchema {
+  collectionName: 'components_exercise_blocks_bucket_sorts';
+  info: {
+    description: '';
+    displayName: 'Bucket Sort';
+    icon: 'manyWays';
+  };
+  attributes: {
+    buckets: Schema.Attribute.Component<
+      'exercise-blocks.bucket-sort-bucket',
+      true
+    >;
+    rows: Schema.Attribute.Component<'exercise-blocks.bucket-sort-item', true>;
+  };
+}
+
+export interface ExerciseBlocksBucketSortBucket extends Struct.ComponentSchema {
+  collectionName: 'components_exercise_blocks_bucket_sort_buckets';
+  info: {
+    description: '';
+    displayName: 'Bucket Sort Bucket';
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    identifier: Schema.Attribute.Integer;
+    label: Schema.Attribute.String;
+  };
+}
+
+export interface ExerciseBlocksBucketSortItem extends Struct.ComponentSchema {
+  collectionName: 'components_exercise_blocks_bucket_sort_items';
+  info: {
+    description: '';
+    displayName: 'Bucket Sort Item';
+  };
+  attributes: {
+    bucket: Schema.Attribute.Integer;
+    item: Schema.Attribute.String;
+    notes: Schema.Attribute.Text;
+  };
+}
+
+export interface ExerciseBlocksGapFilling extends Struct.ComponentSchema {
+  collectionName: 'components_exercise_blocks_gap_fillings';
+  info: {
+    description: '';
+    displayName: 'Gap Filling';
+    icon: 'book';
+  };
+  attributes: {
+    rows: Schema.Attribute.Component<'exercise-blocks.gap-filling-row', true>;
+  };
+}
+
+export interface ExerciseBlocksGapFillingRow extends Struct.ComponentSchema {
   collectionName: 'components_exercise_blocks_gap_filling_rows';
   info: {
     displayName: 'Gap Filling Row';
-    icon: 'bulletList';
   };
   attributes: {
-    content: Attribute.Text;
+    content: Schema.Attribute.Text;
   };
 }
 
-export interface ExerciseBlocksGapFilling extends Schema.Component {
-  collectionName: 'components_exercise_blocks_gap_fillings';
+export interface ExerciseBlocksOrderChips extends Struct.ComponentSchema {
+  collectionName: 'components_exercise_blocks_order_chips';
   info: {
-    displayName: 'Gap Filling';
-    icon: 'book';
     description: '';
+    displayName: 'Order Chips';
   };
   attributes: {
-    rows: Attribute.Component<'exercise-blocks.gap-filling-row', true>;
+    rows: Schema.Attribute.Component<'exercise-blocks.order-chips-row', true>;
   };
 }
 
-export interface LessonPageBlocksCallout extends Schema.Component {
+export interface ExerciseBlocksOrderChipsAnswerRow
+  extends Struct.ComponentSchema {
+  collectionName: 'components_exercise_blocks_order_chips_answer_rows';
+  info: {
+    displayName: 'Order Chips Answer Row';
+  };
+  attributes: {
+    content: Schema.Attribute.Text;
+  };
+}
+
+export interface ExerciseBlocksOrderChipsRow extends Struct.ComponentSchema {
+  collectionName: 'components_exercise_blocks_order_chips_rows';
+  info: {
+    description: '';
+    displayName: 'Order Chips Row';
+  };
+  attributes: {
+    afterPrompt: Schema.Attribute.Text;
+    answers: Schema.Attribute.Component<
+      'exercise-blocks.order-chips-answer-row',
+      true
+    >;
+    prompt: Schema.Attribute.Text;
+  };
+}
+
+export interface LessonPageBlocksCallout extends Struct.ComponentSchema {
   collectionName: 'components_lesson_page_blocks_callouts';
   info: {
     displayName: 'Callout';
     icon: 'message';
   };
   attributes: {
-    type: Attribute.Enumeration<['tip', 'task']>;
-    content: Attribute.Blocks & Attribute.Required;
+    content: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    type: Schema.Attribute.Enumeration<['tip', 'task']>;
   };
 }
 
-export interface LessonPageBlocksConversation extends Schema.Component {
+export interface LessonPageBlocksConversation extends Struct.ComponentSchema {
   collectionName: 'components_lesson_page_blocks_conversations';
   info: {
+    description: '';
     displayName: 'Conversation';
     icon: 'quote';
-    description: '';
   };
   attributes: {
-    row: Attribute.Component<'conversation-blocks.conversation-block', true>;
-    audio: Attribute.Media;
+    audio: Schema.Attribute.Media<'audios', true>;
+    row: Schema.Attribute.Component<
+      'conversation-blocks.conversation-block',
+      true
+    >;
   };
 }
 
-export interface LessonPageBlocksParagraph extends Schema.Component {
+export interface LessonPageBlocksParagraph extends Struct.ComponentSchema {
   collectionName: 'components_lesson_page_blocks_paragraphs';
   info: {
+    description: '';
     displayName: 'Paragraph';
     icon: 'file';
-    description: '';
   };
   attributes: {
-    content: Attribute.Blocks;
+    content: Schema.Attribute.Blocks;
   };
 }
 
-export interface LessonPageBlocksVerb extends Schema.Component {
+export interface LessonPageBlocksVerb extends Struct.ComponentSchema {
   collectionName: 'components_lesson_page_blocks_verbs';
   info: {
+    description: '';
     displayName: 'Verb';
     icon: 'walk';
   };
   attributes: {
-    infinitive: Attribute.String;
-    firstSing: Attribute.String;
-    secondSing: Attribute.String;
-    thirdSing: Attribute.String;
-    firstPlu: Attribute.String;
-    secondPlu: Attribute.String;
-    thirdPlu: Attribute.String;
+    firstPlu: Schema.Attribute.String;
+    firstSing: Schema.Attribute.String;
+    infinitive: Schema.Attribute.Blocks;
+    secondPlu: Schema.Attribute.String;
+    secondSing: Schema.Attribute.String;
+    thirdPlu: Schema.Attribute.String;
+    thirdSing: Schema.Attribute.String;
   };
 }
 
-export interface LessonPageBlocksVocabBlock extends Schema.Component {
+export interface LessonPageBlocksVocabBlock extends Struct.ComponentSchema {
   collectionName: 'components_lesson_page_blocks_vocab_blocks';
   info: {
+    description: '';
     displayName: 'Tile Block';
     icon: 'layer';
-    description: '';
   };
   attributes: {
-    image: Attribute.Media;
-    imageSize: Attribute.Enumeration<['large', 'medium', 'small']> &
-      Attribute.DefaultTo<'large'>;
-    row: Attribute.Component<'vocab-blocks.audio-row', true>;
-    hero: Attribute.Boolean & Attribute.DefaultTo<false>;
-    columns: Attribute.Integer &
-      Attribute.SetMinMax<
+    columns: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
         {
-          min: 1;
           max: 4;
+          min: 1;
         },
         number
       > &
-      Attribute.DefaultTo<1>;
-    vAlign: Attribute.Enumeration<['top', 'center', 'bottom']>;
+      Schema.Attribute.DefaultTo<1>;
+    hero: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    imageSize: Schema.Attribute.Enumeration<['large', 'medium', 'small']> &
+      Schema.Attribute.DefaultTo<'large'>;
+    row: Schema.Attribute.Component<'vocab-blocks.audio-row', true>;
+    vAlign: Schema.Attribute.Enumeration<['top', 'center', 'bottom']>;
   };
 }
 
-export interface VocabBlocksAudioRow extends Schema.Component {
+export interface VocabBlocksAudioRow extends Struct.ComponentSchema {
   collectionName: 'components_vocab_blocks_audio_rows';
   info: {
+    description: '';
     displayName: 'Audio Row';
     icon: 'microphone';
-    description: '';
   };
   attributes: {
-    content: Attribute.Blocks;
-    audio: Attribute.Media;
-    column: Attribute.Integer &
-      Attribute.SetMinMax<
+    audio: Schema.Attribute.Media<'audios'>;
+    column: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
         {
-          min: 1;
           max: 4;
+          min: 1;
         },
         number
       > &
-      Attribute.DefaultTo<1>;
-    image: Attribute.Media;
-    gap: Attribute.Boolean & Attribute.DefaultTo<false>;
-    isColumn: Attribute.Boolean & Attribute.DefaultTo<false>;
-    isCentred: Attribute.Boolean & Attribute.DefaultTo<false>;
-    imageSize: Attribute.Enumeration<['large', 'medium', 'small']> &
-      Attribute.DefaultTo<'medium'>;
+      Schema.Attribute.DefaultTo<1>;
+    content: Schema.Attribute.Blocks;
+    gap: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    image: Schema.Attribute.Media<'images'>;
+    imageSize: Schema.Attribute.Enumeration<['large', 'medium', 'small']> &
+      Schema.Attribute.DefaultTo<'medium'>;
+    isCentred: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    isColumn: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
   };
 }
 
-export interface VocabBlocksContent extends Schema.Component {
+export interface VocabBlocksContent extends Struct.ComponentSchema {
   collectionName: 'components_vocab_blocks_contents';
   info: {
     displayName: 'content';
@@ -164,24 +248,30 @@ export interface VocabBlocksContent extends Schema.Component {
   attributes: {};
 }
 
-export interface VocabBlocksSimple extends Schema.Component {
+export interface VocabBlocksSimple extends Struct.ComponentSchema {
   collectionName: 'components_vocab_blocks_simples';
   info: {
     displayName: 'Simple';
     icon: 'write';
   };
   attributes: {
-    content: Attribute.Blocks;
+    content: Schema.Attribute.Blocks;
   };
 }
 
-declare module '@strapi/types' {
-  export module Shared {
-    export interface Components {
+declare module '@strapi/strapi' {
+  export module Public {
+    export interface ComponentSchemas {
       'conversation-blocks.conversation-block': ConversationBlocksConversationBlock;
       'course-cards.course-feature-rows': CourseCardsCourseFeatureRows;
-      'exercise-blocks.gap-filling-row': ExerciseBlocksGapFillingRow;
+      'exercise-blocks.bucket-sort': ExerciseBlocksBucketSort;
+      'exercise-blocks.bucket-sort-bucket': ExerciseBlocksBucketSortBucket;
+      'exercise-blocks.bucket-sort-item': ExerciseBlocksBucketSortItem;
       'exercise-blocks.gap-filling': ExerciseBlocksGapFilling;
+      'exercise-blocks.gap-filling-row': ExerciseBlocksGapFillingRow;
+      'exercise-blocks.order-chips': ExerciseBlocksOrderChips;
+      'exercise-blocks.order-chips-answer-row': ExerciseBlocksOrderChipsAnswerRow;
+      'exercise-blocks.order-chips-row': ExerciseBlocksOrderChipsRow;
       'lesson-page-blocks.callout': LessonPageBlocksCallout;
       'lesson-page-blocks.conversation': LessonPageBlocksConversation;
       'lesson-page-blocks.paragraph': LessonPageBlocksParagraph;

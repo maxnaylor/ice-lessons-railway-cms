@@ -15,13 +15,14 @@
     "content": {
       "type": "dynamiczone",
       "components": [
-        "exercise-blocks.gap-filling"
+        "exercise-blocks.gap-filling",
+        "exercise-blocks.order-chips",
+        "exercise-blocks.bucket-sort"
       ]
     },
     "title": {
       "type": "string",
-      "required": true,
-      "private": true
+      "required": true
     },
     "instructions": {
       "type": "blocks"

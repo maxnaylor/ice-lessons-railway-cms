@@ -4,7 +4,8 @@
   "info": {
     "singularName": "exercise-answer",
     "pluralName": "exercise-answers",
-    "displayName": "Exercise Answers"
+    "displayName": "Exercise Answers",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -21,6 +22,16 @@
       "relation": "oneToOne",
       "target": "plugin::users-permissions.user"
     },
+    "state": {
+      "type": "enumeration",
+      "enum": [
+        "unstarted",
+        "started",
+        "complete-fullmarks",
+        "complete-partmarks"
+      ],
+      "default": "unstarted"
+    },
     "answerJSON": {
       "type": "json"
     },
@@ -33,15 +44,10 @@
     "unfilledAnswers": {
       "type": "integer"
     },
-    "status": {
-      "type": "enumeration",
-      "enum": [
-        "unstarted",
-        "started",
-        "complete-fullmarks",
-        "complete-partmarks"
-      ],
-      "default": "unstarted"
+    "lessonPage": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::lesson-page.lesson-page"
     }
   }
 }
