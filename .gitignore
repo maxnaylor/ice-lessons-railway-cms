@@ -115,3 +115,4 @@ build
 .strapi
 yarn.lock
 .nova/Configuration.json
+yarn.lock
