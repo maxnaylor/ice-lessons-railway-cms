@@ -37,6 +37,7 @@ export interface ExerciseBlocksBucketSort extends Struct.ComponentSchema {
       'exercise-blocks.bucket-sort-bucket',
       true
     >;
+    prompt: Schema.Attribute.Blocks;
     rows: Schema.Attribute.Component<'exercise-blocks.bucket-sort-item', true>;
   };
 }
