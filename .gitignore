@@ -116,3 +116,5 @@ build
 yarn.lock
 .nova/Configuration.json
 yarn.lock
+package-lock.json
+yarn.lock
