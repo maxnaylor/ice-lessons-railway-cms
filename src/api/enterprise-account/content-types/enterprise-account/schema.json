@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "enterprise_accounts",
+  "info": {
+    "singularName": "enterprise-account",
+    "pluralName": "enterprise-accounts",
+    "displayName": "Enterprise Accounts"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "companyName": {
+      "type": "string",
+      "required": true
+    },
+    "companyNumber": {
+      "type": "string",
+      "unique": true
+    },
+    "domain": {
+      "type": "uid",
+      "required": true
+    },
+    "billingEmail": {
+      "type": "email"
+    },
+    "seatLimit": {
+      "type": "integer"
+    },
+    "autoenrol": {
+      "type": "boolean",
+      "default": false
+    },
+    "autoenrolNotifications": {
+      "type": "boolean",
+      "default": false
+    },
+    "susbcriptionType": {
+      "type": "enumeration",
+      "enum": [
+        "free",
+        "paid"
+      ],
+      "default": "paid"
+    }
+  }
+}

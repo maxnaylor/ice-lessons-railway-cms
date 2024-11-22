@@ -111,6 +111,19 @@
     "onboarded": {
       "type": "boolean",
       "default": false
+    },
+    "enterpriseAccount": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::enterprise-account.enterprise-account"
+    },
+    "enterpriseAccountRole": {
+      "type": "enumeration",
+      "enum": [
+        "standard",
+        "admin"
+      ],
+      "default": "standard"
     }
   }
 }

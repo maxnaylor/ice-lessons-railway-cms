@@ -485,6 +485,44 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiEnterpriseAccountEnterpriseAccount
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'enterprise_accounts';
+  info: {
+    displayName: 'Enterprise Accounts';
+    pluralName: 'enterprise-accounts';
+    singularName: 'enterprise-account';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    autoenrol: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    autoenrolNotifications: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
+    billingEmail: Schema.Attribute.Email;
+    companyName: Schema.Attribute.String & Schema.Attribute.Required;
+    companyNumber: Schema.Attribute.String & Schema.Attribute.Unique;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    domain: Schema.Attribute.UID & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::enterprise-account.enterprise-account'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seatLimit: Schema.Attribute.Integer;
+    susbcriptionType: Schema.Attribute.Enumeration<['free', 'paid']> &
+      Schema.Attribute.DefaultTo<'paid'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiExerciseAnswerExerciseAnswer
   extends Struct.CollectionTypeSchema {
   collectionName: 'exercise_answers';
@@ -1202,6 +1240,12 @@ export interface PluginUsersPermissionsUser
       Schema.Attribute.SetMinMaxLength<{
         minLength: 6;
       }>;
+    enterpriseAccount: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::enterprise-account.enterprise-account'
+    >;
+    enterpriseAccountRole: Schema.Attribute.Enumeration<['standard', 'admin']> &
+      Schema.Attribute.DefaultTo<'standard'>;
     firstName: Schema.Attribute.String & Schema.Attribute.Required;
     gender: Schema.Attribute.Enumeration<['m', 'f', 'nb']>;
     lang: Schema.Attribute.Enumeration<['is', 'en-gb']> &
@@ -1252,6 +1296,7 @@ declare module '@strapi/strapi' {
       'api::blog.blog': ApiBlogBlog;
       'api::course-progress.course-progress': ApiCourseProgressCourseProgress;
       'api::course.course': ApiCourseCourse;
+      'api::enterprise-account.enterprise-account': ApiEnterpriseAccountEnterpriseAccount;
       'api::exercise-answer.exercise-answer': ApiExerciseAnswerExerciseAnswer;
       'api::exercise.exercise': ApiExerciseExercise;
       'api::feedback.feedback': ApiFeedbackFeedback;
