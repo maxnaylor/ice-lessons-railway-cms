@@ -124,6 +124,9 @@
         "admin"
       ],
       "default": "standard"
+    },
+    "enterpriseAccountStatus": {
+      "type": "boolean"
     }
   }
 }

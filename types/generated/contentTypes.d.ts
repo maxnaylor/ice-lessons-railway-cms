@@ -1250,6 +1250,7 @@ export interface PluginUsersPermissionsUser
     >;
     enterpriseAccountRole: Schema.Attribute.Enumeration<['standard', 'admin']> &
       Schema.Attribute.DefaultTo<'standard'>;
+    enterpriseAccountStatus: Schema.Attribute.Boolean;
     firstName: Schema.Attribute.String & Schema.Attribute.Required;
     gender: Schema.Attribute.Enumeration<['m', 'f', 'nb']>;
     lang: Schema.Attribute.Enumeration<['is', 'en-gb']> &
