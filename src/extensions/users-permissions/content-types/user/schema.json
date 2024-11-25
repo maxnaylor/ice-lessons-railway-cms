@@ -125,7 +125,7 @@
       ],
       "default": "standard"
     },
-    "enterpriseAccountStatus": {
+    "enterpriseAccountActive": {
       "type": "boolean"
     }
   }
