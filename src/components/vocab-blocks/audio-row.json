@@ -52,6 +52,9 @@
         "small"
       ],
       "default": "medium"
+    },
+    "class": {
+      "type": "string"
     }
   }
 }
