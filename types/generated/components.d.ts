@@ -221,6 +221,7 @@ export interface VocabBlocksAudioRow extends Struct.ComponentSchema {
   };
   attributes: {
     audio: Schema.Attribute.Media<'audios'>;
+    class: Schema.Attribute.String;
     column: Schema.Attribute.Integer &
       Schema.Attribute.SetMinMax<
         {
