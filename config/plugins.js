@@ -3,7 +3,7 @@ module.exports = ({ env }) => ({
     config: {
       jwtSecret: env('JWT_SECRET'),
       register: {
-        allowedFields: ["firstName", "trialExpiry"],
+        allowedFields: ["firstName", "trialExpiry", "enterpriseAccount", "enterpriseAccountRole", "enterpriseAccountActive"],
       },
     },
   },
