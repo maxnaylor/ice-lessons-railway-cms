@@ -49,6 +49,9 @@
         "center",
         "bottom"
       ]
+    },
+    "columnsSizeToFit": {
+      "type": "boolean"
     }
   }
 }
