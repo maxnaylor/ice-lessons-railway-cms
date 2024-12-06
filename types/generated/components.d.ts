@@ -203,6 +203,7 @@ export interface LessonPageBlocksVocabBlock extends Struct.ComponentSchema {
         number
       > &
       Schema.Attribute.DefaultTo<1>;
+    columnsSizeToFit: Schema.Attribute.Boolean;
     hero: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     imageSize: Schema.Attribute.Enumeration<['large', 'medium', 'small']> &
