@@ -1,12 +1,16 @@
 {
   "collectionName": "components_exercise_blocks_gap_filling_rows",
   "info": {
-    "displayName": "Gap Filling Row"
+    "displayName": "Gap Filling Row",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "content": {
       "type": "text"
+    },
+    "label": {
+      "type": "string"
     }
   }
 }

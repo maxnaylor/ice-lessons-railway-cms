@@ -76,6 +76,7 @@ export interface ExerciseBlocksGapFilling extends Struct.ComponentSchema {
     icon: 'book';
   };
   attributes: {
+    hideNumbers: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     rows: Schema.Attribute.Component<'exercise-blocks.gap-filling-row', true>;
   };
 }
@@ -83,10 +84,12 @@ export interface ExerciseBlocksGapFilling extends Struct.ComponentSchema {
 export interface ExerciseBlocksGapFillingRow extends Struct.ComponentSchema {
   collectionName: 'components_exercise_blocks_gap_filling_rows';
   info: {
+    description: '';
     displayName: 'Gap Filling Row';
   };
   attributes: {
     content: Schema.Attribute.Text;
+    label: Schema.Attribute.String;
   };
 }
 
