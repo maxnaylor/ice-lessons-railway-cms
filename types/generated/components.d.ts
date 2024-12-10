@@ -89,6 +89,10 @@ export interface ExerciseBlocksGapFillingRow extends Struct.ComponentSchema {
   };
   attributes: {
     content: Schema.Attribute.Text;
+    images: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     label: Schema.Attribute.String;
   };
 }
