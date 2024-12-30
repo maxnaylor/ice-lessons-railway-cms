@@ -69,6 +69,19 @@
       "type": "boolean",
       "default": false,
       "required": false
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "course",
+        "expack"
+      ]
+    },
+    "vendor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::vendor.vendor",
+      "inversedBy": "courses"
     }
   }
 }

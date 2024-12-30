@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vendors",
+  "info": {
+    "singularName": "vendor",
+    "pluralName": "vendors",
+    "displayName": "Vendors",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "website": {
+      "type": "string"
+    },
+    "vendorID": {
+      "type": "string",
+      "minLength": 4,
+      "unique": true,
+      "maxLength": 4,
+      "required": true
+    },
+    "courses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::course.course",
+      "mappedBy": "vendor"
+    }
+  }
+}

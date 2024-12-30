@@ -479,9 +479,11 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
     productID: Schema.Attribute.UID;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'name'>;
+    type: Schema.Attribute.Enumeration<['course', 'expack']>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    vendor: Schema.Attribute.Relation<'manyToOne', 'api::vendor.vendor'>;
   };
 }
 
@@ -768,6 +770,46 @@ export interface ApiPurchasePurchase extends Struct.CollectionTypeSchema {
       'oneToOne',
       'plugin::users-permissions.user'
     >;
+  };
+}
+
+export interface ApiVendorVendor extends Struct.CollectionTypeSchema {
+  collectionName: 'vendors';
+  info: {
+    description: '';
+    displayName: 'Vendors';
+    pluralName: 'vendors';
+    singularName: 'vendor';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    avatar: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    courses: Schema.Attribute.Relation<'oneToMany', 'api::course.course'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Blocks;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::vendor.vendor'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    vendorID: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 4;
+        minLength: 4;
+      }>;
+    website: Schema.Attribute.String;
   };
 }
 
@@ -1308,6 +1350,7 @@ declare module '@strapi/strapi' {
       'api::lesson-page.lesson-page': ApiLessonPageLessonPage;
       'api::lesson.lesson': ApiLessonLesson;
       'api::purchase.purchase': ApiPurchasePurchase;
+      'api::vendor.vendor': ApiVendorVendor;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
