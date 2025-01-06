@@ -608,6 +608,38 @@ export interface ApiExerciseExercise extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiExternalPageExternalPage
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'external_pages';
+  info: {
+    displayName: 'External Pages';
+    pluralName: 'external-pages';
+    singularName: 'external-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    lastUpdated: Schema.Attribute.Date;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::external-page.external-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'>;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFeedbackFeedback extends Struct.CollectionTypeSchema {
   collectionName: 'feedbacks';
   info: {
@@ -1596,6 +1628,7 @@ declare module '@strapi/strapi' {
       'api::enterprise-account.enterprise-account': ApiEnterpriseAccountEnterpriseAccount;
       'api::exercise-answer.exercise-answer': ApiExerciseAnswerExerciseAnswer;
       'api::exercise.exercise': ApiExerciseExercise;
+      'api::external-page.external-page': ApiExternalPageExternalPage;
       'api::feedback.feedback': ApiFeedbackFeedback;
       'api::lesson-page.lesson-page': ApiLessonPageLessonPage;
       'api::lesson.lesson': ApiLessonLesson;

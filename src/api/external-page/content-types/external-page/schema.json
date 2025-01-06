@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "external_pages",
+  "info": {
+    "singularName": "external-page",
+    "pluralName": "external-pages",
+    "displayName": "External Pages"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "lastUpdated": {
+      "type": "date"
+    },
+    "content": {
+      "type": "blocks"
+    }
+  }
+}
