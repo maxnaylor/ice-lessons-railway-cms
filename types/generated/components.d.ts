@@ -166,11 +166,12 @@ export interface LessonPageBlocksConversation extends Struct.ComponentSchema {
 export interface LessonPageBlocksParadigm extends Struct.ComponentSchema {
   collectionName: 'components_lesson_page_blocks_paradigms';
   info: {
+    description: '';
     displayName: 'Paradigm';
     icon: 'apps';
   };
   attributes: {
-    bodyRow: Schema.Attribute.Component<'paradigm.paradigm-row', true>;
+    bodyRows: Schema.Attribute.Component<'paradigm.paradigm-row', true>;
     headerRow: Schema.Attribute.Component<'paradigm.paradigm-row', false>;
     template: Schema.Attribute.Enumeration<['noun', 'verb']>;
   };
