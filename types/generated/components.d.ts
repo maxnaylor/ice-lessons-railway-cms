@@ -173,7 +173,7 @@ export interface LessonPageBlocksParadigm extends Struct.ComponentSchema {
   attributes: {
     bodyRows: Schema.Attribute.Component<'paradigm.paradigm-row', true>;
     headerRow: Schema.Attribute.Component<'paradigm.paradigm-row', false>;
-    template: Schema.Attribute.Enumeration<['noun', 'verb']>;
+    template: Schema.Attribute.Enumeration<['pronoun', 'noun', 'verb']>;
   };
 }
 
