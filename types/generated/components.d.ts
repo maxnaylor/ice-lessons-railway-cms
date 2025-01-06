@@ -163,6 +163,19 @@ export interface LessonPageBlocksConversation extends Struct.ComponentSchema {
   };
 }
 
+export interface LessonPageBlocksParadigm extends Struct.ComponentSchema {
+  collectionName: 'components_lesson_page_blocks_paradigms';
+  info: {
+    displayName: 'Paradigm';
+    icon: 'apps';
+  };
+  attributes: {
+    bodyRow: Schema.Attribute.Component<'paradigm.paradigm-row', true>;
+    headerRow: Schema.Attribute.Component<'paradigm.paradigm-row', false>;
+    template: Schema.Attribute.Enumeration<['noun', 'verb']>;
+  };
+}
+
 export interface LessonPageBlocksParagraph extends Struct.ComponentSchema {
   collectionName: 'components_lesson_page_blocks_paragraphs';
   info: {
@@ -217,6 +230,29 @@ export interface LessonPageBlocksVocabBlock extends Struct.ComponentSchema {
       Schema.Attribute.DefaultTo<'large'>;
     row: Schema.Attribute.Component<'vocab-blocks.audio-row', true>;
     vAlign: Schema.Attribute.Enumeration<['top', 'center', 'bottom']>;
+  };
+}
+
+export interface ParadigmParadigmCell extends Struct.ComponentSchema {
+  collectionName: 'components_paradigm_paradigm_cells';
+  info: {
+    displayName: 'Paradigm Cell';
+    icon: 'quote';
+  };
+  attributes: {
+    content: Schema.Attribute.Blocks;
+  };
+}
+
+export interface ParadigmParadigmRow extends Struct.ComponentSchema {
+  collectionName: 'components_paradigm_paradigm_rows';
+  info: {
+    description: '';
+    displayName: 'Paradigm Row';
+    icon: 'bulletList';
+  };
+  attributes: {
+    cell: Schema.Attribute.Component<'paradigm.paradigm-cell', true>;
   };
 }
 
@@ -284,9 +320,12 @@ declare module '@strapi/strapi' {
       'exercise-blocks.order-chips-row': ExerciseBlocksOrderChipsRow;
       'lesson-page-blocks.callout': LessonPageBlocksCallout;
       'lesson-page-blocks.conversation': LessonPageBlocksConversation;
+      'lesson-page-blocks.paradigm': LessonPageBlocksParadigm;
       'lesson-page-blocks.paragraph': LessonPageBlocksParagraph;
       'lesson-page-blocks.verb': LessonPageBlocksVerb;
       'lesson-page-blocks.vocab-block': LessonPageBlocksVocabBlock;
+      'paradigm.paradigm-cell': ParadigmParadigmCell;
+      'paradigm.paradigm-row': ParadigmParadigmRow;
       'vocab-blocks.audio-row': VocabBlocksAudioRow;
       'vocab-blocks.content': VocabBlocksContent;
       'vocab-blocks.simple': VocabBlocksSimple;

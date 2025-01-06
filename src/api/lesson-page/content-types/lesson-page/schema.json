@@ -41,7 +41,8 @@
         "lesson-page-blocks.vocab-block",
         "lesson-page-blocks.conversation",
         "lesson-page-blocks.callout",
-        "lesson-page-blocks.verb"
+        "lesson-page-blocks.verb",
+        "lesson-page-blocks.paradigm"
       ]
     },
     "slug": {

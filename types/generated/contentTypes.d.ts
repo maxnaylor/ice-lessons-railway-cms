@@ -703,6 +703,7 @@ export interface ApiLessonPageLessonPage extends Struct.CollectionTypeSchema {
         'lesson-page-blocks.conversation',
         'lesson-page-blocks.callout',
         'lesson-page-blocks.verb',
+        'lesson-page-blocks.paradigm',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;

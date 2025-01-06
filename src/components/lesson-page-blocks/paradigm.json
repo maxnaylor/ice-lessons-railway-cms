@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_lesson_page_blocks_paradigms",
+  "info": {
+    "displayName": "Paradigm",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "headerRow": {
+      "displayName": "Paradigm Row",
+      "type": "component",
+      "repeatable": false,
+      "component": "paradigm.paradigm-row"
+    },
+    "bodyRow": {
+      "type": "component",
+      "repeatable": true,
+      "component": "paradigm.paradigm-row"
+    },
+    "template": {
+      "type": "enumeration",
+      "enum": [
+        "noun",
+        "verb"
+      ]
+    }
+  }
+}

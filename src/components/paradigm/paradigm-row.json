@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_paradigm_paradigm_rows",
+  "info": {
+    "displayName": "Paradigm Row",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "cell": {
+      "displayName": "Paradigm Cell",
+      "type": "component",
+      "repeatable": true,
+      "component": "paradigm.paradigm-cell"
+    }
+  }
+}
