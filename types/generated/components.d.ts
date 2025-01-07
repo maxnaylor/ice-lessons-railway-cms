@@ -237,10 +237,12 @@ export interface LessonPageBlocksVocabBlock extends Struct.ComponentSchema {
 export interface ParadigmParadigmCell extends Struct.ComponentSchema {
   collectionName: 'components_paradigm_paradigm_cells';
   info: {
+    description: '';
     displayName: 'Paradigm Cell';
     icon: 'quote';
   };
   attributes: {
+    colSpan: Schema.Attribute.Integer;
     content: Schema.Attribute.Blocks;
   };
 }

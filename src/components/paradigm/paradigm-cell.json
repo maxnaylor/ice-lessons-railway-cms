@@ -2,12 +2,16 @@
   "collectionName": "components_paradigm_paradigm_cells",
   "info": {
     "displayName": "Paradigm Cell",
-    "icon": "quote"
+    "icon": "quote",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "content": {
       "type": "blocks"
+    },
+    "colSpan": {
+      "type": "integer"
     }
   }
 }
