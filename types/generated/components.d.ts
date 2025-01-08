@@ -244,6 +244,7 @@ export interface ParadigmParadigmCell extends Struct.ComponentSchema {
   attributes: {
     colSpan: Schema.Attribute.Integer;
     content: Schema.Attribute.Blocks;
+    width: Schema.Attribute.Integer;
   };
 }
 

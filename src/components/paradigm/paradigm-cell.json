@@ -12,6 +12,9 @@
     },
     "colSpan": {
       "type": "integer"
+    },
+    "width": {
+      "type": "integer"
     }
   }
 }
