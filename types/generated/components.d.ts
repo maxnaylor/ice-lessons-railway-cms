@@ -257,6 +257,7 @@ export interface ParadigmParadigmRow extends Struct.ComponentSchema {
   };
   attributes: {
     cell: Schema.Attribute.Component<'paradigm.paradigm-cell', true>;
+    dividerRow: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
   };
 }
 
