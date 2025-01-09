@@ -1578,7 +1578,7 @@ export interface PluginUsersPermissionsUser
       Schema.Attribute.DefaultTo<'standard'>;
     firstName: Schema.Attribute.String & Schema.Attribute.Required;
     gender: Schema.Attribute.Enumeration<['m', 'f', 'nb']>;
-    lang: Schema.Attribute.Enumeration<['is', 'en-gb']> &
+    lang: Schema.Attribute.Enumeration<['is', 'en-gb', 'pl']> &
       Schema.Attribute.DefaultTo<'en-gb'>;
     lastLogin: Schema.Attribute.DateTime;
     locale: Schema.Attribute.String & Schema.Attribute.Private;

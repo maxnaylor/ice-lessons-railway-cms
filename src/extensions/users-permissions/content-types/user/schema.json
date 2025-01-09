@@ -81,7 +81,8 @@
       "type": "enumeration",
       "enum": [
         "is",
-        "en-gb"
+        "en-gb",
+        "pl"
       ],
       "default": "en-gb"
     },
