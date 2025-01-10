@@ -15,6 +15,9 @@
     },
     "width": {
       "type": "integer"
+    },
+    "rowSpan": {
+      "type": "integer"
     }
   }
 }
