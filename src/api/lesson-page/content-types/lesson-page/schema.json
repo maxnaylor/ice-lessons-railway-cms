@@ -16,11 +16,6 @@
       "type": "string",
       "required": true
     },
-    "lesson": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::lesson.lesson"
-    },
     "type": {
       "type": "enumeration",
       "enum": [
@@ -57,6 +52,12 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::exercise.exercise"
+    },
+    "lesson": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::lesson.lesson",
+      "inversedBy": "lessonPages"
     }
   }
 }

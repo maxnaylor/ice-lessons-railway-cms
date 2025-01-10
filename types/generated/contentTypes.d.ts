@@ -710,7 +710,7 @@ export interface ApiLessonPageLessonPage extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     exercise: Schema.Attribute.Relation<'oneToOne', 'api::exercise.exercise'>;
-    lesson: Schema.Attribute.Relation<'oneToOne', 'api::lesson.lesson'>;
+    lesson: Schema.Attribute.Relation<'manyToOne', 'api::lesson.lesson'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

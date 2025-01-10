@@ -25,11 +25,6 @@
       "targetField": "title",
       "required": true
     },
-    "lessonPages": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::lesson-page.lesson-page"
-    },
     "course": {
       "type": "relation",
       "relation": "oneToOne",
@@ -39,11 +34,18 @@
       "type": "string"
     },
     "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "lessonPages": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::lesson-page.lesson-page",
+      "mappedBy": "lesson"
     }
   }
 }
