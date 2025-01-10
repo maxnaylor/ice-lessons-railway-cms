@@ -58,6 +58,11 @@
       "relation": "manyToOne",
       "target": "api::lesson.lesson",
       "inversedBy": "lessonPages"
+    },
+    "pageNo": {
+      "type": "integer",
+      "unique": true,
+      "required": true
     }
   }
 }

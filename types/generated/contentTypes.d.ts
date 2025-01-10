@@ -718,6 +718,9 @@ export interface ApiLessonPageLessonPage extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     longTitle: Schema.Attribute.String;
+    pageNo: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
