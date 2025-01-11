@@ -230,7 +230,9 @@ export interface LessonPageBlocksVocabBlock extends Struct.ComponentSchema {
     imageSize: Schema.Attribute.Enumeration<['large', 'medium', 'small']> &
       Schema.Attribute.DefaultTo<'large'>;
     row: Schema.Attribute.Component<'vocab-blocks.audio-row', true>;
-    vAlign: Schema.Attribute.Enumeration<['top', 'center', 'bottom']>;
+    vAlign: Schema.Attribute.Enumeration<
+      ['top', 'center', 'bottom', 'baseline']
+    >;
   };
 }
 
