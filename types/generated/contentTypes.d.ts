@@ -462,12 +462,17 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     duration: Schema.Attribute.Integer;
+    externalName: Schema.Attribute.String;
     features: Schema.Attribute.Component<
       'course-cards.course-feature-rows',
       true
     >;
+    instructionLang: Schema.Attribute.Enumeration<['en-gb', 'is', 'pl']>;
     intro: Schema.Attribute.Blocks;
     lessons: Schema.Attribute.Relation<'oneToMany', 'api::lesson.lesson'>;
+    levelCEFR: Schema.Attribute.Enumeration<
+      ['A1', 'A2', 'B1', 'B2', 'C1', 'C2']
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
