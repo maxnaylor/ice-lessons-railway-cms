@@ -10,6 +10,7 @@
     "strapi": "strapi"
   },
   "dependencies": {
+    "@strapi/plugin-seo": "^2.0.4",
     "@strapi/plugin-users-permissions": "5.5.0",
     "@strapi/provider-email-sendgrid": "^5.2.0",
     "@strapi/provider-upload-cloudinary": "5.5.0",
