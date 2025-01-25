@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Orders"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "squareOrderID": {
+      "type": "string"
+    },
+    "paymentLink": {
+      "type": "string"
+    },
+    "paymentLinkCreated": {
+      "type": "datetime"
+    },
+    "paymentStatus": {
+      "type": "string"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "product": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::course.course"
+    }
+  }
+}
