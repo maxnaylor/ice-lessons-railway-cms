@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_external_page_blocks_faqs",
+  "info": {
+    "displayName": "FAQ",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "text"
+    },
+    "answer": {
+      "type": "blocks"
+    }
+  }
+}

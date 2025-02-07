@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_external_page_blocks_faq_blocks",
+  "info": {
+    "displayName": "FAQ Block",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "faqs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "external-page-blocks.faq"
+    }
+  }
+}
