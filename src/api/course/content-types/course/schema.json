@@ -118,6 +118,15 @@
     },
     "promoText": {
       "type": "string"
+    },
+    "priceEUR": {
+      "type": "integer"
+    },
+    "priceUSD": {
+      "type": "integer"
+    },
+    "priceISK": {
+      "type": "integer"
     }
   }
 }
