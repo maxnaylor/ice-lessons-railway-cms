@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_store_store_highlights_lists",
+  "info": {
+    "displayName": "Store Highlights List",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "highlight": {
+      "type": "text"
+    }
+  }
+}

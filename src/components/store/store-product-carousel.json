@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_store_store_product_carousels",
+  "info": {
+    "displayName": "Store Product Carousel",
+    "icon": "stack"
+  },
+  "options": {},
+  "attributes": {
+    "course": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::course.course"
+    }
+  }
+}

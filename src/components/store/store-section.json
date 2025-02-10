@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_store_store_sections",
+  "info": {
+    "displayName": "Store Section",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "h2": {
+      "type": "string"
+    },
+    "intro": {
+      "type": "blocks"
+    },
+    "products": {
+      "displayName": "Store Product Carousel",
+      "type": "component",
+      "repeatable": true,
+      "component": "store.store-product-carousel"
+    },
+    "highlights": {
+      "displayName": "Store Highlights List",
+      "type": "component",
+      "repeatable": true,
+      "component": "store.store-highlights-list"
+    }
+  }
+}
