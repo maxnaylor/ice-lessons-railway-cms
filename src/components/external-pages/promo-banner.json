@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_external_pages_promo_banners",
+  "info": {
+    "displayName": "Promo Banner",
+    "icon": "gift"
+  },
+  "options": {},
+  "attributes": {
+    "cover": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "heading": {
+      "type": "text"
+    },
+    "body": {
+      "type": "blocks"
+    },
+    "terms": {
+      "type": "blocks"
+    }
+  }
+}
