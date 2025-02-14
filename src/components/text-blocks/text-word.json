@@ -52,6 +52,13 @@
     },
     "wordlistOverride": {
       "type": "string"
+    },
+    "plural": {
+      "type": "enumeration",
+      "enum": [
+        "pluralOnly",
+        "singularOnly"
+      ]
     }
   }
 }
