@@ -8,7 +8,8 @@
   "options": {},
   "attributes": {
     "word": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "class": {
       "type": "enumeration",
@@ -21,10 +22,12 @@
         "conj",
         "prep",
         "num"
-      ]
+      ],
+      "required": true
     },
     "lemma": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "gender": {
       "type": "enumeration",
@@ -41,7 +44,8 @@
       "component": "text-blocks.text-lookup"
     },
     "keepCapitals": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "uid": {
       "type": "integer"
