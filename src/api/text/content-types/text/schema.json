@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "texts",
+  "info": {
+    "singularName": "text",
+    "pluralName": "texts",
+    "displayName": "Texts",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "displayName": "Text Paragraph",
+      "type": "component",
+      "repeatable": true,
+      "component": "text-blocks.text-paragraph"
+    }
+  }
+}

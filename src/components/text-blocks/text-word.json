@@ -1,0 +1,53 @@
+{
+  "collectionName": "components_text_blocks_text_words",
+  "info": {
+    "displayName": "Text Word",
+    "icon": "book",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "word": {
+      "type": "string"
+    },
+    "class": {
+      "type": "enumeration",
+      "enum": [
+        "n",
+        "v",
+        "adj",
+        "adv",
+        "pro",
+        "conj",
+        "prep",
+        "num"
+      ]
+    },
+    "lemma": {
+      "type": "string"
+    },
+    "gender": {
+      "type": "enumeration",
+      "enum": [
+        "m",
+        "f",
+        "n"
+      ]
+    },
+    "lookup": {
+      "displayName": "Text Lookup",
+      "type": "component",
+      "repeatable": false,
+      "component": "text-blocks.text-lookup"
+    },
+    "keepCapitals": {
+      "type": "boolean"
+    },
+    "uid": {
+      "type": "integer"
+    },
+    "wordlistOverride": {
+      "type": "string"
+    }
+  }
+}

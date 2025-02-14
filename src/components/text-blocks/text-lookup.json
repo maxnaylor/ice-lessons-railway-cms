@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_text_blocks_text_lookups",
+  "info": {
+    "displayName": "Text Lookup",
+    "icon": "book"
+  },
+  "options": {},
+  "attributes": {
+    "resourceName": {
+      "type": "enumeration",
+      "enum": [
+        "m.is"
+      ]
+    },
+    "slug": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_text_blocks_text_paragraphs",
+  "info": {
+    "displayName": "Text Paragraph",
+    "icon": "book"
+  },
+  "options": {},
+  "attributes": {
+    "sentences": {
+      "displayName": "Text Sentence",
+      "type": "component",
+      "repeatable": true,
+      "component": "text-blocks.text-sentence"
+    }
+  }
+}

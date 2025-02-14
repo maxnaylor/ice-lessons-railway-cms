@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_text_blocks_text_sentences",
+  "info": {
+    "displayName": "Text Sentence",
+    "icon": "book"
+  },
+  "options": {},
+  "attributes": {
+    "audioPosition": {
+      "type": "decimal"
+    },
+    "words": {
+      "displayName": "Text Word",
+      "type": "component",
+      "repeatable": true,
+      "component": "text-blocks.text-word"
+    }
+  }
+}
