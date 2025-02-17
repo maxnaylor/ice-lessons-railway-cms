@@ -21,7 +21,8 @@
         "pro",
         "conj",
         "prep",
-        "num"
+        "num",
+        "interj"
       ],
       "required": true
     },
