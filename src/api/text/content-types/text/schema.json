@@ -20,6 +20,13 @@
       "type": "component",
       "repeatable": true,
       "component": "text-blocks.text-paragraph"
+    },
+    "audio": {
+      "allowedTypes": [
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
