@@ -379,6 +379,10 @@
         "zm",
         "zw"
       ]
+    },
+    "mailingListOptIn": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
