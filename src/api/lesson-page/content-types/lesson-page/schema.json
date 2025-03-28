@@ -24,7 +24,8 @@
         "pronunciation",
         "verb",
         "exercise",
-        "summary"
+        "summary",
+        "comprehension"
       ],
       "required": true,
       "default": "vocab"
