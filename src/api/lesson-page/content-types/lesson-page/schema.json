@@ -64,6 +64,11 @@
       "type": "integer",
       "unique": false,
       "required": true
+    },
+    "text": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::text.text"
     }
   }
 }
