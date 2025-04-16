@@ -24,7 +24,8 @@
         "pronunciation",
         "verb",
         "exercise",
-        "summary"
+        "summary",
+        "comprehension"
       ],
       "required": true,
       "default": "vocab"
@@ -63,6 +64,11 @@
       "type": "integer",
       "unique": false,
       "required": true
+    },
+    "text": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::text.text"
     }
   }
 }
