@@ -127,6 +127,9 @@
     },
     "priceISK": {
       "type": "integer"
+    },
+    "stripePriceId": {
+      "type": "string"
     }
   }
 }
