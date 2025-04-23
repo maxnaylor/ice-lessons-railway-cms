@@ -11,55 +11,16 @@
       "type": "string",
       "required": true
     },
-    "class": {
-      "type": "enumeration",
-      "enum": [
-        "n",
-        "v",
-        "adj",
-        "adv",
-        "pro",
-        "conj",
-        "prep",
-        "num",
-        "interj"
-      ],
-      "required": true
-    },
-    "lemma": {
-      "type": "string",
-      "required": true
-    },
-    "gender": {
-      "type": "enumeration",
-      "enum": [
-        "m",
-        "f",
-        "n"
-      ]
-    },
-    "lookup": {
-      "displayName": "Text Lookup",
-      "type": "component",
-      "repeatable": false,
-      "component": "text-blocks.text-lookup"
-    },
-    "keepCapitals": {
-      "type": "boolean",
-      "default": false
-    },
     "uid": {
       "type": "integer"
     },
     "wordlistOverride": {
       "type": "string"
     },
-    "plural": {
-      "type": "enumeration",
-      "enum": [
-        "pluralOnly",
-        "singularOnly"
-      ]
+    "lemma": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::text-word.text-word"
     }
   }
 }

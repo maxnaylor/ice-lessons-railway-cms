@@ -2,13 +2,16 @@
   "collectionName": "components_text_blocks_text_lookups",
   "info": {
     "displayName": "Text Lookup",
-    "icon": "book"
+    "icon": "book",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "resourceName": {
       "type": "enumeration",
       "enum": [
+        "islensknutimamals",
+        "bin",
         "m.is"
       ]
     },

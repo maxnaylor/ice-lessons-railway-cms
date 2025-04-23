@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "text_words",
+  "info": {
+    "singularName": "text-word",
+    "pluralName": "text-words",
+    "displayName": "Text Words",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "lemma": {
+      "type": "string",
+      "required": true
+    },
+    "class": {
+      "type": "enumeration",
+      "enum": [
+        "n",
+        "v",
+        "adj",
+        "adv",
+        "pro",
+        "conj",
+        "prep",
+        "num",
+        "interj"
+      ],
+      "required": true
+    },
+    "gender": {
+      "type": "enumeration",
+      "enum": [
+        "m",
+        "f",
+        "n"
+      ]
+    },
+    "plural": {
+      "type": "enumeration",
+      "enum": [
+        "pluralOnly",
+        "singularOnly"
+      ]
+    },
+    "lookup": {
+      "type": "component",
+      "repeatable": true,
+      "component": "text-blocks.text-lookup"
+    },
+    "keepCapitals": {
+      "type": "boolean"
+    },
+    "wordlistOverride": {
+      "type": "string"
+    },
+    "internalName": {
+      "type": "string"
+    }
+  }
+}
