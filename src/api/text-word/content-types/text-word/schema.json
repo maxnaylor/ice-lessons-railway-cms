@@ -58,7 +58,8 @@
       "type": "string"
     },
     "internalName": {
-      "type": "string"
+      "type": "string",
+      "required": true
     }
   }
 }
