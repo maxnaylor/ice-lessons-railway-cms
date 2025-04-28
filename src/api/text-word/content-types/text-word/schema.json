@@ -77,7 +77,8 @@
         "dat+acc",
         "dat+dat",
         "acc+acc",
-        "acc+dat"
+        "acc+dat",
+        "acc+gen"
       ]
     }
   }
