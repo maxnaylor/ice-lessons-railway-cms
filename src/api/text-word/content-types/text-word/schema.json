@@ -73,7 +73,11 @@
         "acc",
         "dat",
         "gen",
-        "acc/dat"
+        "acc-dat-motion",
+        "dat+acc",
+        "dat+dat",
+        "acc+acc",
+        "acc+dat"
       ]
     }
   }
