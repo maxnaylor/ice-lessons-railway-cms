@@ -66,6 +66,15 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::text-word-tag.text-word-tag"
+    },
+    "governs": {
+      "type": "enumeration",
+      "enum": [
+        "acc",
+        "dat",
+        "gen",
+        "acc/dat"
+      ]
     }
   }
 }
