@@ -61,6 +61,11 @@
       "type": "string",
       "required": true,
       "unique": true
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::text-word-tag.text-word-tag"
     }
   }
 }

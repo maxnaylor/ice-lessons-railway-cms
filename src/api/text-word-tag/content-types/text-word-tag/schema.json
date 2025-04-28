@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "text_word_tags",
+  "info": {
+    "singularName": "text-word-tag",
+    "pluralName": "text-word-tags",
+    "displayName": "Text Word Tags",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "tag": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "emoji": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    }
+  }
+}
