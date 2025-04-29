@@ -21,6 +21,35 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::text-word.text-word"
+    },
+    "role": {
+      "type": "enumeration",
+      "enum": [
+        "subject",
+        "object-direct",
+        "object-indirect",
+        "verb-main",
+        "verb-aux",
+        "complement",
+        "modifier",
+        "quantifier"
+      ]
+    },
+    "governs": {
+      "type": "enumeration",
+      "enum": [
+        "nom",
+        "acc",
+        "dat",
+        "gen",
+        "acc-dat-motion",
+        "acc-dat-other",
+        "dat+acc",
+        "dat+dat",
+        "acc+acc",
+        "acc+dat",
+        "acc+gen"
+      ]
     }
   }
 }
