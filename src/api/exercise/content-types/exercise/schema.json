@@ -17,7 +17,8 @@
       "components": [
         "exercise-blocks.gap-filling",
         "exercise-blocks.order-chips",
-        "exercise-blocks.bucket-sort"
+        "exercise-blocks.bucket-sort",
+        "exercise-blocks.multiple-choice"
       ]
     },
     "title": {

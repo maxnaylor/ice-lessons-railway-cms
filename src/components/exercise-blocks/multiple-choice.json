@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_exercise_blocks_multiple_choices",
+  "info": {
+    "displayName": "Multiple Choice",
+    "icon": "cursor",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "rows": {
+      "displayName": "Multiple Choice Row",
+      "type": "component",
+      "repeatable": true,
+      "component": "exercise-blocks.multiple-choice-row"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_exercise_blocks_multiple_choice_rows",
+  "info": {
+    "displayName": "Multiple Choice Row",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "prompt": {
+      "type": "text",
+      "required": true
+    },
+    "options": {
+      "displayName": "Multiple Choice Option",
+      "type": "component",
+      "repeatable": true,
+      "component": "exercise-blocks.multiple-choice-option"
+    },
+    "shuffleOptions": {
+      "type": "boolean"
+    }
+  }
+}
