@@ -24,6 +24,10 @@
         "pronunciation",
         "verb",
         "exercise",
+        "exercise-comprehension",
+        "exercise-vocab",
+        "exercise-listening",
+        "exercise-usage",
         "summary",
         "comprehension"
       ],
