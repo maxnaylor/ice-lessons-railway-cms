@@ -17,6 +17,9 @@
     },
     "slug": {
       "type": "string"
+    },
+    "guid": {
+      "type": "string"
     }
   }
 }

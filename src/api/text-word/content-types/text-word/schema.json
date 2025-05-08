@@ -84,6 +84,11 @@
     },
     "meaningClue": {
       "type": "text"
+    },
+    "relatedWords": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::text-word.text-word"
     }
   }
 }
