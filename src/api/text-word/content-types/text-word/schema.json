@@ -90,7 +90,7 @@
       "relation": "oneToMany",
       "target": "api::text-word.text-word"
     },
-    "antoynms": {
+    "antonyms": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::text-word.text-word"
