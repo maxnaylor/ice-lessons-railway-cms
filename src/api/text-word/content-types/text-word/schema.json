@@ -89,6 +89,11 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::text-word.text-word"
+    },
+    "antoynms": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::text-word.text-word"
     }
   }
 }
