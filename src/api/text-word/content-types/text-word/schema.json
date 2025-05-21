@@ -104,6 +104,14 @@
     "middleVoice": {
       "type": "boolean",
       "default": false
+    },
+    "reflexive": {
+      "type": "boolean",
+      "default": false
+    },
+    "impersonal": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
