@@ -110,8 +110,11 @@
       "default": false
     },
     "impersonal": {
-      "type": "boolean",
-      "default": false
+      "type": "enumeration",
+      "enum": [
+        "acc",
+        "dat"
+      ]
     }
   }
 }
