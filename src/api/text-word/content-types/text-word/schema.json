@@ -100,6 +100,10 @@
     },
     "paradigmAppend": {
       "type": "string"
+    },
+    "middleVoice": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
