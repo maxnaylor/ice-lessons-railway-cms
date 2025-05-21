@@ -94,6 +94,12 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::text-word.text-word"
+    },
+    "paradigmPrepend": {
+      "type": "string"
+    },
+    "paradigmAppend": {
+      "type": "string"
     }
   }
 }
