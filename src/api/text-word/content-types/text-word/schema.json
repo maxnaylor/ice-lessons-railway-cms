@@ -24,6 +24,7 @@
         "adj",
         "adv",
         "pro",
+        "pro-indef",
         "conj",
         "prep",
         "num",
@@ -79,7 +80,8 @@
         "dat+dat",
         "acc+acc",
         "acc+dat",
-        "acc+gen"
+        "acc+gen",
+        "nom"
       ]
     },
     "meaningClue": {
