@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "word_lists",
+  "info": {
+    "singularName": "word-list",
+    "pluralName": "word-lists",
+    "displayName": "Word Lists"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "words": {
+      "displayName": "Word List Word",
+      "type": "component",
+      "repeatable": true,
+      "component": "word-list.word-list-word"
+    }
+  }
+}

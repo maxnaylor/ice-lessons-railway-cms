@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_word_list_word_list_words",
+  "info": {
+    "displayName": "Word List Word",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "word": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::text-word.text-word"
+    },
+    "added": {
+      "type": "datetime"
+    },
+    "fromLessonPage": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::lesson-page.lesson-page"
+    }
+  }
+}
