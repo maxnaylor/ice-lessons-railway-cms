@@ -2,7 +2,8 @@
   "collectionName": "components_word_list_word_list_words",
   "info": {
     "displayName": "Word List Word",
-    "icon": "bulletList"
+    "icon": "bulletList",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -18,6 +19,9 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::lesson-page.lesson-page"
+    },
+    "wordForm": {
+      "type": "string"
     }
   }
 }
