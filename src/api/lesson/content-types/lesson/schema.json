@@ -46,6 +46,10 @@
       "relation": "oneToMany",
       "target": "api::lesson-page.lesson-page",
       "mappedBy": "lesson"
+    },
+    "enableTrialAccess": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

@@ -33,6 +33,10 @@
     },
     "purchaseExpiry": {
       "type": "datetime"
+    },
+    "trialOnly": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
